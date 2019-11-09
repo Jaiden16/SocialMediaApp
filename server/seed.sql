@@ -22,6 +22,7 @@ CREATE TABLE Posts(
     id SERIAL PRIMARY KEY,
     poster_id INT REFERENCES Users (id),
     body VARCHAR,
+    -- turn likes into an array so that we can check who liked it.
     likes INT,
     views INT
     );
