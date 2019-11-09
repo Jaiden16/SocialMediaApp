@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 #header {
     position: fixed;
     width: 100%;
@@ -25,7 +31,20 @@ li a {
     text-decoration: none;
 }
   
-  /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
+}
+
+li input {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 5px;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 75px;
+    text-align: center;
+    margin: 20px;
 }
