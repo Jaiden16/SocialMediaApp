@@ -6,8 +6,8 @@ CREATE DATABASE lurk_db;
 
 -- Users created will have posts, lurks and albums
 CREATE TABLE Users(
-    id SERIAL PRIMARY KEY,
-    username VARCHAR(16) NOT NULL UNIQUE,
+    id SERIAL PRIMARY KEY ,
+    username VARCHAR(16) NOT NULL UNIQUE ON DELETE CASCADE,
     password VARCHAR,
     firstname VARCHAR,
     lastname VARCHAR,
@@ -63,11 +63,13 @@ CREATE TABLE Pictures(
 
 -- Add some users
 INSERT INTO Users(username, password, firstname, lastname, email, age, location, bio)
-    VALUES('BusBoy24', '103', 'Adam', 'Addams', 'meow@aol.com', 40, 'New York', 'Nope'),
-          ('BusBoy54', '193', 'Beth', 'Brown', 'meow@chickenbutt.com', 51, 'New York', 'Nope'),
-          ('BusBoy84', '777', 'Cal', 'Cassady', 'meow@pursuit.com', 14, 'New York', 'Nope'),
-          ('BusBoy14', '456', 'Don', 'Donner', 'meow@gmail.com', 33, 'New York', 'Nope'),
-          ('BusBoy94', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope');
+    VALUES('DryEraser', '103', 'Adam', 'Addams', 'meow@aol.com', 40, 'New York', 'Nope'),
+          ('SteveJobs', '193', 'Beth', 'Brown', 'meow@chickenbutt.com', 51, 'New York', 'Nope'),
+          ('Expo', '777', 'Cal', 'Cassady', 'meow@pursuit.com', 14, 'New York', 'Nope'),
+          ('JohnDoe87', '456', 'Don', 'Donner', 'meow@gmail.com', 33, 'New York', 'Nope'),
+          ('JaneDoes20', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope');
+          ('LittleThanos', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope');
+
 
 -- Add some posts
 INSERT INTO Posts (poster_id, body, likes, views)
@@ -98,14 +100,14 @@ INSERT INTO Comments (post_id, body, likes, views)
 
 -- Add some lurks
 INSERT INTO Lurks(user_id, lurker_username)
-    VALUES(1, 'BusBoy24'),
-          (2, 'BusBoy54'),
-          (2, 'BusBoy54'),
-          (2, 'BusBoy54'),
-          (3, 'BusBoy84'),
-          (4, 'BusBoy14'),
-          (5, 'BusBoy94'),
-          (5, 'BusBoy94');
+    VALUES(1, 'JaneDoes20'),
+          (2, 'DryEraser'),
+          (2, 'JaneDoe87'),
+          (2, 'JaneDoes20'),
+          (3, 'SteveJobs'),
+          (4, 'SteveJobs'),
+          (5, 'Expo'),
+          (5, 'DryEraser');
 
 -- Add album
 INSERT INTO Albums(user_owner_id, album_name, likes, views)
