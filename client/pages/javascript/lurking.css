@@ -5,23 +5,14 @@ html, body {
 }
 
 #header {
-    /* position: fixed; */
+    position: fixed;
     top: 0; 
     width: 100%;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
 }
 
-#mainDiv { 
-  margin: 0 center;
-  display: block;
-}
-
-#mainDiv li {
-  list-style-type: none;
-}
-
-#header ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -29,7 +20,7 @@ html, body {
     background-color: #333;
 }
   
-#header li {
+li {
   float: left;
 }
   
@@ -41,7 +32,7 @@ li a {
     text-decoration: none;
 }
   
-#header li a:hover {
+li a:hover {
     background-color: #111;
 }
 
