@@ -29,7 +29,7 @@ router.get('/:user_id', async (req, res) => {
 
 router.get('/', async (req, res) => {
     let posts = await db.any(`
-        SELECT firstname, body 
+        SELECT firstname, body, views, likes 
         FROM posts 
         INNER JOIN users 
         ON posts.poster_id = users.id
