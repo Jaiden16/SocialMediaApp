@@ -2,9 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //pg-promise
-const pgp = require('pg-promise')();
-const connesctionString = "postgress://localhost:5432/lurk_db";
-const db = pgp(connesctionString);
+const db = require('./config')
 
 router.get('/', async (req, res) => {
     let users = await db.any(`
