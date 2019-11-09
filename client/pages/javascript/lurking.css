@@ -6,6 +6,7 @@ html, body {
 
 #header {
     position: fixed;
+    top: 0; 
     width: 100%;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
@@ -35,12 +36,14 @@ li a:hover {
     background-color: #111;
 }
 
-li input {
+li:last-child {
+    float: right;
     display: block;
-    color: #333;
-    text-align: center;
-    padding: 5px;
+    line-height: 40px;
+    height: 25px;
+    margin: 0 40px;
 }
+
 
 h1 {
     font-family: 'Anton', sans-serif;

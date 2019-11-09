@@ -1,6 +1,8 @@
 body{
     background-color: lightgray;
 }
+
+
 #header {
     position: fixed;
     top: 0px;
@@ -32,10 +34,10 @@ li a {
     text-decoration: none;
 }
   
-  /* Change the link color to #111 (black) on hover */
 li a:hover {
     background-color: #111;
 }
+
 
 .mainDiv{
     height: 50%;
@@ -53,5 +55,19 @@ li a:hover {
     height: inherit;
     width: inherit;
     border-radius: 50%;
+}
+
+li input {
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 5px;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    font-size: 75px;
+    text-align: center;
+    margin: 20px;
 }
 
