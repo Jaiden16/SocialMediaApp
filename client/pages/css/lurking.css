@@ -1,0 +1,15 @@
+ul {
+    position: fixed;
+    width: 100%;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+
+li {
+    display: inline;
+}
+
+li a {
+    color: #666;
+}
