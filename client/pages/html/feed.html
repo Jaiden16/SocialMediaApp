@@ -8,17 +8,36 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../javascript/feed.js"></script>
     <link rel="stylesheet" href="../css/feed.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
-   <h1>Lurk</h1>
     <div id="header">
+    <div>
+     <h1>LURK</h1> 
+     <!-- <h2>Feed Page</h2>  -->
+    </div>
+    <div>
         <ul>
             <li><a href="./user_profile.html">Home</a></li>
             <li><a href="./feed.html">Feed</a></li>
-            <li><a href="./album.html">Album</a></li>
+            <li><a href="./album.html">Albums</a></li>
             <li><a href="./lurking.html">Lurking</a></li>
+            <li><input id="searchBar" type="text" placeholder="Search"></input></li>
         </ul>
     </div>
-    <h2>Feed Page</h2>
+    </div>
+
+    <div id="mainDiv">
+        <h2>Add Post</h2>
+        <form id="addPostForm">
+            <p>Message: <textarea type="text"id='post-message' style='width:60%' required></textarea></p>
+            <button>Submit</button>
+        </form> 
+        
+        <h2>User Feed</h2>
+        <ul id="randomFeedList">
+
+        </ul>
+    </div>
 </body>
 </html>

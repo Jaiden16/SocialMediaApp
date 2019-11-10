@@ -25,7 +25,14 @@ CREATE TABLE Posts(
     -- turn likes into an array so that we can check who liked it.
     likes INT,
     views INT
-    );
+);
+
+-- likes
+CREATE TABLE likes(
+    id SERIAL PRIMARY KEY,
+    liker_id INT REFERENCES Users (id) ON DELETE CASCADE,
+    post_id INT REFERENCES posts (id) ON DELETE CASCADE
+);
 
 -- every comment must have a post
 CREATE TABLE Comments(
