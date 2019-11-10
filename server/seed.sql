@@ -122,7 +122,6 @@ INSERT INTO Comments (post_id, body, likes, views)
           (5, 'My favor1351341351313ite number is 8', 0, 0);
 
 
-
 -- Add some lurks
 INSERT INTO Lurks(user_id, lurker_username)
     VALUES(1, 'JaneDoes20'),
