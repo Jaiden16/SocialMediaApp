@@ -13,6 +13,7 @@ const postRouter = require('./routes/postRouter');
 const likeRouter = require('./routes/likeRouter');
 const albumRouter = require('./routes/albumRouter');
 const photosRouter = require('./routes/photosRouter');
+const lurksRouter = require('./routes/lurkRouter');
 
 
 app.use('/users', userRouter);
@@ -20,6 +21,7 @@ app.use('/posts', postRouter);
 app.use('/likes', likeRouter);
 app.use('/albums', albumRouter);
 app.use('/photos', photosRouter);
+app.use('/lurks', lurksRouter);
 app.use('/', (req, res) => res.send('welcome to lurker'));
 
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
