@@ -46,6 +46,7 @@ CREATE TABLE likes(
 -- every comment must have a post
 CREATE TABLE Comments(
     id SERIAL PRIMARY KEY,
+    commenter_id INT REFERENCES Users (id) ON DELETE CASCADE,
     post_id INT REFERENCES Posts (id) ON DELETE CASCADE,
     body VARCHAR,
     likes INT,

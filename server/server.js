@@ -11,6 +11,7 @@ app.use(express.json());
 const userRouter = require('./routes/userRouter');
 const postRouter = require('./routes/postRouter');
 const likeRouter = require('./routes/likeRouter');
+const commentRouter = require('./routes/commentRouter');
 const albumRouter = require('./routes/albumRouter');
 const photosRouter = require('./routes/photosRouter');
 
@@ -18,6 +19,7 @@ const photosRouter = require('./routes/photosRouter');
 app.use('/users', userRouter);
 app.use('/posts', postRouter);
 app.use('/likes', likeRouter);
+app.use('/comments', commentRouter);
 app.use('/albums', albumRouter);
 app.use('/photos', photosRouter);
 app.use('/', (req, res) => res.send('welcome to lurker'));
