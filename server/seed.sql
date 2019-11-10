@@ -6,7 +6,7 @@ CREATE DATABASE lurk_db;
 
 -- Users created will have posts, lurks and albums
 CREATE TABLE Users(
-    id SERIAL PRIMARY KEY ,
+    id SERIAL PRIMARY KEY,
     username VARCHAR(16) NOT NULL UNIQUE,
     password VARCHAR,
     firstname VARCHAR,
