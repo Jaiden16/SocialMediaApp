@@ -1,3 +1,5 @@
+-- \c lurk_db
+
 DROP DATABASE IF EXISTS lurk_db;
 
 CREATE DATABASE lurk_db;
