@@ -70,7 +70,7 @@ router.patch('/:post_id', async (req, res) => {
     try {
         let postByUser = await db.any(`
             UPDATE posts
-            SET body = ${req.body.body}
+            SET body = '${req.body.body}'
             WHERE id = $1
             `, [req.params.post_id]
         )

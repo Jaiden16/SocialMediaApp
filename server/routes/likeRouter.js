@@ -5,15 +5,11 @@ const router = express.Router();
 const db = require('./config')
 
 router.get('/', async (req, res) => {
-    let likes = await db.any(`
-        SELECT firstname, body 
-        FROM likes 
-        INNER JOIN users 
-        ON likes.liker_id = users.id 
-        INNER JOIN posts 
-        ON likes.post_id = posts.id
-        `)
     try {
+        let likes = await db.any(`
+            SELECT *
+            FROM likes 
+            `)
         res.json({
             payload: likes, 
             message: "Success you've reached /likes"
@@ -26,20 +22,41 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.post('/register', async (req, res) => {
-    let insertQuery = 
-        `INSERT INTO likes(liker_id, post_id)
-            VALUES($1, $2)`
-
+router.get('/posts/:post_id', async (req, res) => {
     try {
-        await db.none(insertQuery, [req.body.liker_id, req.body.post_id])
+        let likes = await db.any(`
+            SELECT *
+            FROM likes 
+            WHERE post_id = ${req.params.post_id}
+            `)
         res.json({
-            payload: req.body, 
-            message: 'like request arrivesd at likes/register',
+            payload: likes, 
+            message: "Success you've reached /likes"
         })
     } catch(error) {
+        res.status(500)
         res.json({
-            message: 'There was an error registering like.',
+            message: 'error',
+        })
+    }
+})
+
+router.post('/posts/:post_id', async (req, res) => {
+    try {
+        await db.none(`
+            INSERT INTO likes(liker_id, post_id)
+            VALUES($1, $2)
+            `, [req.body.liker_id, req.params.post_id]
+        )
+        res.json({
+            payload: [req.body.liker_id, req.params.post_id], 
+            message: "Success you've reached /likes"
+        })
+    } catch(error) {
+        res.status(500)
+        res.json({
+            message: 'error',
+            error
         })
     }
 })
