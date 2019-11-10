@@ -30,10 +30,9 @@ CREATE TABLE Users(
 CREATE TABLE Posts(
     id SERIAL PRIMARY KEY,
     -- post_date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
-    poster_id INT REFERENCES Users (id),
+    poster_id INT REFERENCES Users (id) ON DELETE CASCADE,
     body VARCHAR,
     -- turn likes into an array so that we can check who liked it.
-    likes INT,
     views INT
 );
 
@@ -47,7 +46,7 @@ CREATE TABLE likes(
 -- every comment must have a post
 CREATE TABLE Comments(
     id SERIAL PRIMARY KEY,
-    post_id INT REFERENCES Posts (id),
+    post_id INT REFERENCES Posts (id) ON DELETE CASCADE,
     body VARCHAR,
     likes INT,
     views INT
@@ -56,15 +55,15 @@ CREATE TABLE Comments(
 -- Lurks are like a subscribe button and stores usernames of people the user lurks
 CREATE TABLE Lurks(
     id SERIAL PRIMARY KEY,
-    user_id INT REFERENCES Users (id),
-    lurker_username VARCHAR REFERENCES Users (username)
+    user_id INT REFERENCES Users (id) ON DELETE CASCADE,
+    lurker_username VARCHAR REFERENCES Users (username) ON DELETE CASCADE
     -- sub_date TIMESTAMP
 );
 
 -- every user can create an album 
 CREATE TABLE Albums(
     id SERIAL PRIMARY KEY,
-    user_owner_id INT REFERENCES Users (id),
+    user_owner_id INT REFERENCES Users (id) ON DELETE CASCADE,
     album_name VARCHAR,
     likes INT,
     views INT
@@ -73,7 +72,7 @@ CREATE TABLE Albums(
 -- every picture must be in an album
 CREATE TABLE Pictures(
     id SERIAL PRIMARY KEY,
-    album_id INT REFERENCES Albums (id),
+    album_id INT REFERENCES Albums (id) ON DELETE CASCADE,
     pic VARCHAR,
     likes INT,
     views INT
@@ -90,31 +89,33 @@ INSERT INTO Users(username, password, firstname, lastname, email, age, location,
 
 
 -- Add some posts
-INSERT INTO Posts (poster_id, body, likes, views)
-    VALUES(1, 'I am Adam! Hello!', 0, 0),
-          (1, 'I like pancakes', 0, 0),
-          (2, 'I am Beth! Welcome to my blog.', 0, 0),
-          (2, 'My zodiac sign is Gemini', 0, 0),
-          (3, 'I am Cal! This is my first post :)', 0, 0),
-          (4, 'I am Don! Hello world!', 0, 0),
-          (4, 'I enjoy long walks on the beach', 0, 0),
-          (5, 'I am Eve! Welcome!', 0, 0),
-          (5, 'I like turtles', 0, 0),
-          (5, 'My favorite number is 8', 0, 0);
+INSERT INTO Posts (poster_id, body, views)
+    VALUES(1, 'I am Adam! Hello!', 0),
+          (1, 'I like pancakes', 0),
+          (2, 'I am Beth! Welcome to my blog.', 0),
+          (2, 'My zodiac sign is Gemini', 0),
+          (3, 'I am Cal! This is my first post :)', 0),
+          (4, 'I am Don! Hello world!', 0),
+          (4, 'I enjoy long walks on the beach', 0),
+          (5, 'I am Eve! Welcome!', 0),
+          (5, 'I like turtles', 0),
+          (5, 'My favorite number is 8', 0);
     
 
 -- Add some likes
 INSERT INTO likes (liker_id, post_id)
-    VALUES(6, 1),
-          (6, 2),
+    VALUES(6, 10),
           (6, 3),
-          (6, 4),
-          (6, 5),
-          (2, 6),
-          (1, 7),
+          (6, 6),
+          (6, 2),
+          (6, 7),
+          (2, 8),
           (3, 8),
-          (3, 9),
-          (4, 10);
+          (5, 8),
+          (1, 9),
+          (3, 1),
+          (3, 4),
+          (4, 5);
     
 
 -- Add some comments
