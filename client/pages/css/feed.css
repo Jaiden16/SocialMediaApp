@@ -12,7 +12,16 @@ html, body {
     background-color: #f3f3f3;
 }
 
-ul {
+#mainDiv { 
+  margin: 0 center;
+  display: block;
+}
+
+#mainDiv li {
+  list-style-type: none;
+}
+
+#header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -20,7 +29,7 @@ ul {
     background-color: #333;
 }
   
-li {
+#header li {
   float: left;
 }
   
@@ -32,7 +41,7 @@ li a {
     text-decoration: none;
 }
   
-li a:hover {
+#header li a:hover {
     background-color: #111;
 }
 
