@@ -11,24 +11,48 @@
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="header">
-        <div>
-         <h1>Lurk </h1> 
-         <!-- <h2> Lurking Page</h2>  -->
+    <nav>
+        <div class="logo">
+            <h2>LURK</h2> 
         </div>
-        <div>
-            <ul>
-                <li><a href="./user_profile.html">Home</a></li>
-                <li><a href="./feed.html">Feed</a></li>
-                <li><a href="./album.html">Albums</a></li>
-                <li><a href="./lurking.html">Lurking</a></li>
-                <li><input id="searchBar" type="text" placeholder="Search"></input></li>
-            </ul>
-        </div>
-        
-        </div>
-        <div id="mainDiv">
+
+        <ul class="nav-links">
+            <li><a href="./user_profile.html">Home</a></li>
+            <li><a href="./feed.html">Feed</a></li>
+            <li><a href="./album.html">Albums</a></li>
+            <li><a href="./lurking.html">Lurking</a></li>
+        </ul>
     
+        <div class="search-bar">
+            <input id="searchBar" type="text" placeholder="Search"></input>
+        </div>
+
+    <div class="user-profile">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+    </nav>
+
+        <div id="mainDiv">
+            <div class="tab">
+                <button class="tablinks" id="usersLurking">Users</button>
+                <button class="tablinks" id="postsLurking">Posts</button>
+            </div>
+         <div id="allUserProfiles">
+            <div class="userProfile" id="userProfile">
+               <img id="profilePic" src="https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1" alt="user profile picture">
+           <h2>Username</h2>
+           <p>This is the user's bio</p>
+           <button class="unfollow">Unlurk</button>
+           </div>
+           <div class="userProfile" id="userProfile">
+                <img id="profilePic" src="https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1" alt="user profile picture">
+            <h2>Username</h2>
+            <p>This is the user's bio</p>
+            <button class="unfollow">Unlurk</button>
+            </div>
+        </div>
         </div>
 </body>
 </html>
