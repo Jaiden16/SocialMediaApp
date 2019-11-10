@@ -1,3 +1,12 @@
+\c lurk_db
+
+DROP TABLE IF EXISTS likes;
+DROP TABLE IF EXISTS Comments;
+DROP TABLE IF EXISTS Posts;
+DROP TABLE IF EXISTS Lurks;
+DROP TABLE IF EXISTS Pictures;
+DROP TABLE IF EXISTS Albums;
+DROP TABLE IF EXISTS Users;
 DROP DATABASE IF EXISTS lurk_db;
 
 CREATE DATABASE lurk_db;
@@ -6,7 +15,7 @@ CREATE DATABASE lurk_db;
 
 -- Users created will have posts, lurks and albums
 CREATE TABLE Users(
-    id SERIAL PRIMARY KEY ,
+    id SERIAL PRIMARY KEY,
     username VARCHAR(16) NOT NULL UNIQUE,
     password VARCHAR,
     firstname VARCHAR,
@@ -20,11 +29,20 @@ CREATE TABLE Users(
 -- post is connected to a user and has comments
 CREATE TABLE Posts(
     id SERIAL PRIMARY KEY,
+    -- post_date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
     poster_id INT REFERENCES Users (id),
     body VARCHAR,
+    -- turn likes into an array so that we can check who liked it.
     likes INT,
     views INT
-    );
+);
+
+-- likes
+CREATE TABLE likes(
+    id SERIAL PRIMARY KEY,
+    liker_id INT REFERENCES Users (id) ON DELETE CASCADE,
+    post_id INT REFERENCES posts (id) ON DELETE CASCADE
+);
 
 -- every comment must have a post
 CREATE TABLE Comments(
@@ -39,8 +57,8 @@ CREATE TABLE Comments(
 CREATE TABLE Lurks(
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES Users (id),
-    lurker_username VARCHAR REFERENCES Users (username),
-    sub_date TIMESTAMP
+    lurker_username VARCHAR REFERENCES Users (username)
+    -- sub_date TIMESTAMP
 );
 
 -- every user can create an album 
@@ -67,7 +85,7 @@ INSERT INTO Users(username, password, firstname, lastname, email, age, location,
           ('SteveJobs', '193', 'Beth', 'Brown', 'meow@chickenbutt.com', 51, 'New York', 'Nope'),
           ('Expo', '777', 'Cal', 'Cassady', 'meow@pursuit.com', 14, 'New York', 'Nope'),
           ('JohnDoe87', '456', 'Don', 'Donner', 'meow@gmail.com', 33, 'New York', 'Nope'),
-          ('JaneDoes20', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope');
+          ('JaneDoes20', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope'),
           ('LittleThanos', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope');
 
 
@@ -84,6 +102,21 @@ INSERT INTO Posts (poster_id, body, likes, views)
           (5, 'I like turtles', 0, 0),
           (5, 'My favorite number is 8', 0, 0);
     
+
+-- Add some likes
+INSERT INTO likes (liker_id, post_id)
+    VALUES(6, 1),
+          (6, 2),
+          (6, 3),
+          (6, 4),
+          (6, 5),
+          (2, 6),
+          (1, 7),
+          (3, 8),
+          (3, 9),
+          (4, 10);
+    
+
 -- Add some comments
 INSERT INTO Comments (post_id, body, likes, views)
     VALUES(1, 'I am Ad343434am! Hello!', 0, 0),
@@ -102,7 +135,7 @@ INSERT INTO Comments (post_id, body, likes, views)
 INSERT INTO Lurks(user_id, lurker_username)
     VALUES(1, 'JaneDoes20'),
           (2, 'DryEraser'),
-          (2, 'JaneDoe87'),
+          (2, 'JohnDoe87'),
           (2, 'JaneDoes20'),
           (3, 'SteveJobs'),
           (4, 'SteveJobs'),
