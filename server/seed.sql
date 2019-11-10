@@ -20,6 +20,7 @@ CREATE TABLE Users(
 -- post is connected to a user and has comments
 CREATE TABLE Posts(
     id SERIAL PRIMARY KEY,
+    -- post_date DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
     poster_id INT REFERENCES Users (id),
     body VARCHAR,
     -- turn likes into an array so that we can check who liked it.
@@ -47,8 +48,8 @@ CREATE TABLE Comments(
 CREATE TABLE Lurks(
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES Users (id),
-    lurker_username VARCHAR REFERENCES Users (username),
-    sub_date TIMESTAMP
+    lurker_username VARCHAR REFERENCES Users (username)
+    -- sub_date TIMESTAMP
 );
 
 -- every user can create an album 
@@ -75,7 +76,7 @@ INSERT INTO Users(username, password, firstname, lastname, email, age, location,
           ('SteveJobs', '193', 'Beth', 'Brown', 'meow@chickenbutt.com', 51, 'New York', 'Nope'),
           ('Expo', '777', 'Cal', 'Cassady', 'meow@pursuit.com', 14, 'New York', 'Nope'),
           ('JohnDoe87', '456', 'Don', 'Donner', 'meow@gmail.com', 33, 'New York', 'Nope'),
-          ('JaneDoes20', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope');
+          ('JaneDoes20', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope'),
           ('LittleThanos', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope');
 
 
@@ -92,6 +93,21 @@ INSERT INTO Posts (poster_id, body, likes, views)
           (5, 'I like turtles', 0, 0),
           (5, 'My favorite number is 8', 0, 0);
     
+
+-- Add some likes
+INSERT INTO likes (liker_id, post_id)
+    VALUES(6, 1),
+          (6, 2),
+          (6, 3),
+          (6, 4),
+          (6, 5),
+          (2, 6),
+          (1, 7),
+          (3, 8),
+          (3, 9),
+          (4, 10);
+    
+
 -- Add some comments
 INSERT INTO Comments (post_id, body, likes, views)
     VALUES(1, 'I am Ad343434am! Hello!', 0, 0),
