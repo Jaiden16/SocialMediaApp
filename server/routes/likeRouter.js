@@ -61,4 +61,24 @@ router.post('/posts/:post_id', async (req, res) => {
     }
 })
 
+router.delete('/posts/:post_id/:liker_id', async (req, res) => {
+    try {
+        await db.none(`
+            DELETE FROM likes
+            WHERE post_id = ${req.params.post_id} 
+            AND liker_id = ${req.params.liker_id}
+            `)
+        res.json({
+            payload: [req.params.liker_id, req.params.post_id], 
+            message: "Success you've reached /likes"
+        })
+    } catch(error) {
+        res.status(500)
+        res.json({
+            message: 'error',
+            error
+        })
+    }
+})
+
 module.exports = router;
