@@ -5,7 +5,7 @@ html, body {
 }
 
 #header {
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
@@ -47,4 +47,18 @@ h1 {
     font-size: 75px;
     text-align: center;
     margin: 20px;
+}
+
+
+.mainDiv{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(5,5vw);
+    grid-gap: 15px;
+}
+
+
+img{
+    width: 300px;
+    height: 300px;
 }
