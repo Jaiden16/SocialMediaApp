@@ -1,3 +1,12 @@
+\c lurk_db
+
+DROP TABLE IF EXISTS likes;
+DROP TABLE IF EXISTS Comments;
+DROP TABLE IF EXISTS Posts;
+DROP TABLE IF EXISTS Lurks;
+DROP TABLE IF EXISTS Pictures;
+DROP TABLE IF EXISTS Albums;
+DROP TABLE IF EXISTS Users;
 DROP DATABASE IF EXISTS lurk_db;
 
 CREATE DATABASE lurk_db;
@@ -126,7 +135,7 @@ INSERT INTO Comments (post_id, body, likes, views)
 INSERT INTO Lurks(user_id, lurker_username)
     VALUES(1, 'JaneDoes20'),
           (2, 'DryEraser'),
-          (2, 'JaneDoe87'),
+          (2, 'JohnDoe87'),
           (2, 'JaneDoes20'),
           (3, 'SteveJobs'),
           (4, 'SteveJobs'),
