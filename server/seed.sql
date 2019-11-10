@@ -1,12 +1,5 @@
 -- \c lurk_db
 
-DROP TABLE IF EXISTS likes;
-DROP TABLE IF EXISTS Comments;
-DROP TABLE IF EXISTS Posts;
-DROP TABLE IF EXISTS Lurks;
-DROP TABLE IF EXISTS Pictures;
-DROP TABLE IF EXISTS Albums;
-DROP TABLE IF EXISTS Users;
 DROP DATABASE IF EXISTS lurk_db;
 
 CREATE DATABASE lurk_db;
@@ -46,6 +39,7 @@ CREATE TABLE likes(
 -- every comment must have a post
 CREATE TABLE Comments(
     id SERIAL PRIMARY KEY,
+    commenter_id INT REFERENCES Users (id) ON DELETE CASCADE,
     post_id INT REFERENCES Posts (id) ON DELETE CASCADE,
     body VARCHAR,
     likes INT,
