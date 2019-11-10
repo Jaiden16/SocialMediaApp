@@ -1,4 +1,4 @@
-\c lurk_db
+-- \c lurk_db
 
 DROP TABLE IF EXISTS likes;
 DROP TABLE IF EXISTS Comments;
