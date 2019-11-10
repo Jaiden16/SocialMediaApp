@@ -11,7 +11,7 @@ app.use(express.json());
 const userRouter = require('./routes/userRouter');
 const postRouter = require('./routes/postRouter');
 const likeRouter = require('./routes/likeRouter');
-const albumRouter = require('./routese/albumRouter');
+const albumRouter = require('./routes/albumRouter');
 const photosRouter = require('./routes/photosRouter');
 
 
