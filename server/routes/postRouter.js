@@ -4,6 +4,7 @@ const router = express.Router();
 //pg-promise
 const db = require('./config')
 
+//gets feed list of all posts and the user who posted
 router.get('/', async (req, res) => {
     console.log('you hit posts/ endpoint')
     let posts = await db.any(`
