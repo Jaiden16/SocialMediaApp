@@ -9,8 +9,9 @@ router.get('/', async (req, res) => {
     let posts = await db.any(`
         SELECT *
         FROM posts 
+        INNER JOIN users
+        ON posts.poster_id = users.id
     `)
-    console.log(posts)
     try {
         res.json({
             payload: posts, 

@@ -158,7 +158,10 @@ INSERT INTO Pictures(album_id, pic, likes, views)
           (5, 'url', 3, 9);
 
 -- Let's verify that the users and posts were inserted 
-SELECT * FROM users;
-SELECT * FROM posts;
-SELECT * FROM lurks;
-SELECT * FROM albums;
+SELECT * FROM Users;
+SELECT * FROM Posts;
+SELECT * FROM likes;
+SELECT * FROM Comments;
+SELECT * FROM Lurks;
+SELECT * FROM Albums;
+SELECT * FROM Pictures;
