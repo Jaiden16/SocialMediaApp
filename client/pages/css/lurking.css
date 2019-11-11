@@ -1,3 +1,9 @@
+/* html {
+  height: 100%;
+  background: url("") no-repeat center center fixed;
+  background-size: cover;
+} */
+
 * {
     margin: 0;
     padding: 0;
@@ -110,7 +116,7 @@ nav {
     }
 
 #mainDiv {
-    width: 70%; 
+    width: 80%; 
     height: 750px;
     margin-left: auto;
     margin-right: auto;
@@ -142,6 +148,11 @@ nav {
     background-color: #ddd;
 }
 
+#mainDiv h1 {
+  text-align: center;
+  margin: 10px;
+}
+
 .userProfile {
     width: 70%;
     margin: 10px;
@@ -152,11 +163,31 @@ nav {
 
 }
 
-.userProfile img {
+.profilePic {
     width: 20%;
     border-radius: 150px;
 }
 
+.post {
+  width: 70%;
+  height: 200px; 
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ddd; 
+}
+
+.post p {
+  padding: 5px; 
+  border-style: solid;
+  border-color: black;
+  border-radius: 20px;
+}
+
+.postProfilePic {
+  width: 15%;
+  border-radius: 150px;
+}
 
 
 
