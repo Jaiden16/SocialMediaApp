@@ -21,6 +21,7 @@ const displayUsers = () => {
 let allProfiles = document.querySelector("#allUserProfiles")
  allProfiles.style.display = 'block'
 
+//Loading new users from backend to DOM 
 // let allProfiles = document.querySelector("#allUserProfiles")
 // let userProfile = document.createElement('div')
 // userProfile.setAttribute('class', 'userProfile')

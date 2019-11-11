@@ -120,6 +120,9 @@ nav {
 }
 
 .tab {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
     overflow: hidden;
     border: 1px solid #ccc;
     background-color: #f1f1f1;
