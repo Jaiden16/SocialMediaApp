@@ -1,3 +1,10 @@
+/* html {
+  height: 100%;
+  background: url("") no-repeat center center fixed;
+  background-size: cover;
+} */
+
+
 * {
     margin: 0;
     padding: 0;
@@ -109,11 +116,25 @@ nav {
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-.mainDiv{
+/* .mainDiv{
     display: grid;
     grid-template-columns: repeat(8,1fr);
     grid-template-rows: repeat(5,5vw);
     grid-gap: 15px;
+} */
+
+#mainDiv {
+  width: 80%; 
+  height: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white; 
+  box-shadow: 10px 10px 8px 10px #888888;
+  overflow: scroll;
+  display: grid;
+  grid-template-columns: repeat(8,1fr);
+  grid-template-rows: repeat(5,5vw);
+  grid-gap: 15px;
 }
 
 
