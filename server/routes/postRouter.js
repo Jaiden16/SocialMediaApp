@@ -7,10 +7,14 @@ const db = require('./config')
 router.get('/', async (req, res) => {
     console.log('you hit posts/ endpoint')
     let posts = await db.any(`
-        SELECT *
-        FROM posts 
-        INNER JOIN users
-        ON posts.poster_id = users.id
+    SELECT 
+        users.username AS User_name, ARRAY_AGG (posts.body) All_UserPosts
+    FROM posts, users
+    WHERE posts.poster_id = users.id
+    GROUP BY 
+        User_name
+    ORDER BY 
+        All_UserPosts DESC; 
     `)
     try {
         res.json({
