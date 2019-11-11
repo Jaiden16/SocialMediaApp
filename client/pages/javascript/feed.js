@@ -12,12 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
 async function loadPosts() {
     const postsList = document.querySelector('#randomFeedList');
     postsList.innerHTML = "";
+    let lastuser = "";
+
     const response = await axios.get(`http://localhost:3000/posts`);
     response.data.payload.forEach((post) => {
-        // console.
-        let listItem = document.createElement("li");
-        listItem.innerText = `Post: ${post.body} Likes: ${post.likes} Views: ${post.views} \n\n`;
-        postsList.appendChild(listItem);
+
+            for(let element of post.all_userposts){
+                let listItem = document.createElement("li");
+                listItem.innerText = `User: ${post.user_name} Posts: ${element} \n\n`;
+                postsList.appendChild(listItem);    
+            }
     });
 }
 
