@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addEventListeners();
     navSlide();
     populateUsers();
+    populatePosts();
 })
 
 const navSlide = () => {
@@ -102,6 +103,34 @@ async function populateUsers() {
 // userProfile.append(profilePic, username, userBio, unfollowBtn)
 // allUsers.append(userProfile)
 }
+
+async function populatePosts() {
+    const allUsers = document.querySelector("#listAllLurkedPosts");
+    allUsers.innerHTML = "";
+    const response = await axios.get(`http://localhost:3000/lurks/lurkedPosts/2`); //switch the user_id '2' with the logged in user
+    response.data.payload.forEach((post) => {
+        console.log("Stuff", post)
+
+        let lurkedUserPosts = document.createElement('div')
+        lurkedUserPosts.setAttribute('class', 'post')
+    
+        let postProfilePic = document.createElement('img')
+        postProfilePic.setAttribute('class', 'postProfilePic')
+        postProfilePic.src = "https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1"
+    
+        let username = document.createElement('h2')
+        username.innerText = post.user_name
+        // username.innerText = post.All_User_Lurked
+    
+        let userPost = document.createElement('p')
+        userPost.innerText = "This is the post"
+    
+        lurkedUserPosts.append(postProfilePic, username, userPost)
+        allUsers.append(lurkedUserPosts)
+    
+    })
+}
+
 
 const unfollowUser = () => {
 // make api call to remove 'lurk' 
