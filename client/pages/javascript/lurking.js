@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log('Dom loaded')
     addEventListeners();
     navSlide();
+    populateUsers();
+    populatePosts();
 })
 
 const navSlide = () => {
@@ -34,19 +36,53 @@ const addEventListeners = () => {
     usersBtn.addEventListener('click', displayUsers)
     postsBtn.addEventListener('click', displayPosts)
 
-    usersBtn.click()
+    usersBtn.click();
 }
 
 const displayUsers = () => {
 let allPosts = document.querySelector("#allPosts")
 allPosts.style.display = 'none'  
 
-
 let allProfiles = document.querySelector("#allUserProfiles")
  allProfiles.style.display = 'block'
+}
 
-// displaying users from back end in the lurking page 
-// let allProfiles = document.querySelector("#allUserProfiles")
+const displayPosts = () => {
+    let allProfiles = document.querySelector("#allUserProfiles")
+    allProfiles.style.display = 'none'   
+
+    let allPosts = document.querySelector("#allPosts")
+    allPosts.style.display = 'block' 
+}
+// postsList.innerHTML = "";
+
+async function populateUsers() {
+   const allUsers = document.querySelector("#listAllLurked");
+   allUsers.innerHTML = "";
+   const response = await axios.get(`http://localhost:3000/lurks/2`); //switch the user_id '2' with the logged in user
+   response.data.payload.forEach((post) => {
+    
+    let userProfile = document.createElement('div')
+    userProfile.setAttribute('class', 'userProfile')
+
+    let profilePic = document.createElement('img')
+    profilePic.setAttribute('class', 'profilePic')
+    profilePic.src = "https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1"
+
+    let username = document.createElement('h2')
+    username.innerText = post.lurker_username
+
+    let userBio = document.createElement('p')
+    userBio.innerText = "This is the user bio"
+
+    let unfollowBtn = document.createElement('button')
+    unfollowBtn.innerText = 'Unlurk'
+    unfollowBtn.addEventListener('click', unfollowUser)
+
+    userProfile.append(profilePic, username, userBio, unfollowBtn)
+    allUsers.append(userProfile)
+
+});
 // let userProfile = document.createElement('div')
 // userProfile.setAttribute('class', 'userProfile')
 
@@ -65,17 +101,36 @@ let allProfiles = document.querySelector("#allUserProfiles")
 // unfollowBtn.addEventListener('click', unfollowUser)
 
 // userProfile.append(profilePic, username, userBio, unfollowBtn)
-// allProfiles.append(userProfile)
+// allUsers.append(userProfile)
 }
 
+async function populatePosts() {
+    const allUsers = document.querySelector("#listAllLurkedPosts");
+    allUsers.innerHTML = "";
+    const response = await axios.get(`http://localhost:3000/lurks/lurkedPosts/2`); //switch the user_id '2' with the logged in user
+    response.data.payload.forEach((post) => {
+        console.log("Stuff", post)
 
-const displayPosts = () => {
-    let allProfiles = document.querySelector("#allUserProfiles")
-    allProfiles.style.display = 'none'   
-
-    let allPosts = document.querySelector("#allPosts")
-    allPosts.style.display = 'block' 
+        let lurkedUserPosts = document.createElement('div')
+        lurkedUserPosts.setAttribute('class', 'post')
+    
+        let postProfilePic = document.createElement('img')
+        postProfilePic.setAttribute('class', 'postProfilePic')
+        postProfilePic.src = "https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1"
+    
+        let username = document.createElement('h2')
+        username.innerText = post.user_name
+        // username.innerText = post.All_User_Lurked
+    
+        let userPost = document.createElement('p')
+        userPost.innerText = "This is the post"
+    
+        lurkedUserPosts.append(postProfilePic, username, userPost)
+        allUsers.append(lurkedUserPosts)
+    
+    })
 }
+
 
 const unfollowUser = () => {
 // make api call to remove 'lurk' 

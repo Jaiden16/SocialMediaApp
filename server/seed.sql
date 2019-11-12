@@ -1,10 +1,22 @@
--- \c lurk_db
-
 DROP DATABASE IF EXISTS lurk_db;
 
 CREATE DATABASE lurk_db;
 
 \c lurk_db
+
+DROP TABLE IF EXISTS pictures;
+
+DROP TABLE IF EXISTS lurks;
+
+DROP TABLE IF EXISTS likes;
+
+DROP TABLE IF EXISTS comments;
+
+DROP TABLE IF EXISTS albums;
+
+DROP TABLE IF EXISTS posts;
+
+DROP TABLE IF EXISTS users;
 
 -- Users created will have posts, lurks and albums
 CREATE TABLE Users(

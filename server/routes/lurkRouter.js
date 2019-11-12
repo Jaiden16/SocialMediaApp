@@ -24,6 +24,30 @@ router.get('/:user_id', async (req, res) => {
     }
 })
 
+router.get('/lurkedPosts/:user_id', async (req, res) => {
+    try {
+        let lurks = await db.any(`
+        SELECT 
+            users.id, users.username AS User_name, ARRAY_AGG (lurks.lurker_username) AS All_User_Lurked
+        FROM lurks, users
+        WHERE lurks.user_id = users.id AND users.id = ${req.params.user_id}
+        GROUP BY 
+            users.id
+        ORDER BY 
+            All_User_Lurked DESC
+        `)
+        res.json({
+            payload: lurks,
+            message: "Success you've reached /lurks"
+        })
+    } catch(error) {
+        res.status(500)
+        res.json({
+            message: 'error',
+        })
+    }
+})
+
 router.delete('/deleteLurk/:user_id/:lurker_username', async (req, res) => {
     try {
         await db.none(`
