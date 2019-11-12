@@ -22,21 +22,7 @@ const addFormSubmitted = async (event) => {
     formInputs.forEach(input => postBody[input.id] = input.value)
 
     let {data} = await axios.post(obj[form].postURL, postBody);
+    window.location.href = './feed.html'
     return data.payload
-    // let item = data.payload;
-    // console.log(item, obj[form].innerText(item))
-    // addToList(document.querySelector(obj[form].listID), obj[form].innerText(item))
 }
 
-const loadList = async (listID, getURL, itemInnerText) => {
-    const list = document.querySelector(listID);
-    list.innerHTML = "";
-    const {data} = await axios.get(getURL);
-    data.payload.forEach((item) => addToList(list, itemInnerText(item)));
-}
-
-const addToList = (list, itemInnerText) => {
-    let listItem = document.createElement("li");
-    listItem.innerText = itemInnerText;
-    list.appendChild(listItem);
-}
