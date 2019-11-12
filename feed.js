@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
 async function loadPosts() {
     const postsList = document.querySelector('#randomFeedList');
     postsList.innerHTML = "";
-    let lastuser = "";
 
     const response = await axios.get(`http://localhost:3000/posts`);
     response.data.payload.forEach((post) => {

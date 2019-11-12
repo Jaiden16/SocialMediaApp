@@ -114,8 +114,8 @@ router.get('/user/:user_id', async (req, res) => {
     try {
         let postByUser = await db.any(`
             SELECT *   
-            FROM posts 
-            INNER JOIN users
+            FROM users 
+            INNER JOIN posts
             ON posts.poster_id = users.id
             WHERE poster_id = $1
             `, [req.params.user_id]
@@ -153,6 +153,29 @@ router.get('/likedBy/:liker_id', async (req, res) => {
         res.json({
             message: 'error',
             error,
+        })
+    }
+})
+
+router.get('/likes/:post_id', async (req, res) => {
+    try {
+        let count = await db.any(`
+            SELECT *
+            FROM likes
+            INNER JOIN posts
+            ON likes.post_id = post.id
+            WHERE
+        `)
+        console.log(count)
+        res.json({
+            message: 'SUCCESS: GET/likes/:post_id',
+            count
+        })
+    } catch(error) {
+        res.status(500)
+        res.json({
+            message: 'ERROR: GET/likes/:post_id',
+            error
         })
     }
 })

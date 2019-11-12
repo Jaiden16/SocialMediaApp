@@ -62,6 +62,7 @@ CREATE TABLE Comments(
 CREATE TABLE Lurks(
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES Users (id) ON DELETE CASCADE,
+    lurker_id INT REFERENCES Users (id) ON DELETE CASCADE,
     lurker_username VARCHAR REFERENCES Users (username) ON DELETE CASCADE
     -- sub_date TIMESTAMP
 );
@@ -139,15 +140,15 @@ INSERT INTO Comments (post_id, body, likes, views)
 
 
 -- Add some lurks
-INSERT INTO Lurks(user_id, lurker_username)
-    VALUES(1, 'JaneDoes20'),
-          (2, 'DryEraser'),
-          (2, 'JohnDoe87'),
-          (2, 'JaneDoes20'),
-          (3, 'SteveJobs'),
-          (4, 'SteveJobs'),
-          (5, 'Expo'),
-          (5, 'DryEraser');
+INSERT INTO Lurks(user_id, lurker_id, lurker_username)
+    VALUES(1, 5, 'JaneDoes20'),
+          (2, 1, 'DryEraser'),
+          (2, 4, 'JohnDoe87'),
+          (2, 5, 'JaneDoes20'),
+          (3, 2, 'SteveJobs'),
+          (4, 2, 'SteveJobs'),
+          (5, 3, 'Expo'),
+          (5, 1, 'DryEraser');
 
 -- Add album
 INSERT INTO Albums(user_owner_id, album_name, likes, views)
