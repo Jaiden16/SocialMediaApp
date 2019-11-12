@@ -16,12 +16,14 @@ async function loadPosts() {
 
     const response = await axios.get(`http://localhost:3000/posts`);
     response.data.payload.forEach((post) => {
-
-            for(let element of post.all_userposts){
-                let listItem = document.createElement("li");
-                listItem.innerText = `User: ${post.user_name} Posts: ${element} \n\n`;
-                postsList.appendChild(listItem);    
-            }
+      for(let element of post.all_userposts){
+        let listItem = document.createElement("li");
+        let poster = document.createElement('strong');
+        poster.innerText = post.username
+        listItem.innerText = `\nPost: ${post.body}\nLikes: ${post.likes} Views: ${post.views} \n\n`;
+        listItem.prepend(poster)
+        postsList.append(listItem);
+      }
     });
 }
 
