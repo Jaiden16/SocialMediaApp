@@ -24,7 +24,7 @@ router.get('/:user_id', async (req, res) => {
     }
 })
 
-router.get('/lurkedPosts/:user_id', async (req, res) => {
+router.get('/lurkedUsers/:user_id', async (req, res) => {
     try {
         let lurks = await db.any(`
         SELECT 
@@ -38,6 +38,27 @@ router.get('/lurkedPosts/:user_id', async (req, res) => {
         `)
         res.json({
             payload: lurks,
+            message: "Success you've reached /lurks"
+        })
+    } catch(error) {
+        res.status(500)
+        res.json({
+            message: 'error',
+        })
+    }
+})
+
+router.get('/lurkedUserPosts/:username', async (req, res) => {
+    try {
+        let lurkPosts = await db.any(`
+        SELECT 
+            posts.body
+        FROM users
+        INNER JOIN posts ON  users.id = posts.poster_id
+        WHERE users.username = ${req.params.username}
+        `)
+        res.json({
+            payload: lurkPosts,
             message: "Success you've reached /lurks"
         })
     } catch(error) {

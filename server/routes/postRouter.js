@@ -114,8 +114,8 @@ router.get('/user/:user_id', async (req, res) => {
     try {
         let postByUser = await db.any(`
             SELECT *   
-            FROM posts 
-            INNER JOIN users
+            FROM users 
+            INNER JOIN posts
             ON posts.poster_id = users.id
             WHERE poster_id = $1
             `, [req.params.user_id]
