@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- THIS IS OUR TEMPLATE HTML PAGE FOR MOST OF OUR HTML PAGES  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up - LURK</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../javascript/signup.js"></script>
+    <link rel="stylesheet" href="../css/signup.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h2>LURK</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="./user_profile.html">Home</a></li>
+            <li><a href="./feed.html">Feed</a></li>
+            <li><a href="./album.html">Albums</a></li>
+            <li><a href="./lurking.html">Lurking</a></li>
+            <li><a href="./games.html">Games</a></li>
+        </ul>
+        <div class="search-bar">
+            <input id="searchBar" type="text" placeholder="Search"></input>
+        </div>
+        <div class="user-profile">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <!--^^^^ IS THE NAV BAR WHICH IS THE SAME THROUHGOUT MOST OF OUR PAGES -->
+
+    <!--vvvv BELOW IS THE MAIN DIV IN WHICH WE DISPLAY CONTENT 
+        vvvv THIS IS WHAT WILL CHANGE THROUGHOUT OUR TEMPLATE PAGES -->
+    <div id="mainDiv">
+        <div id="signup_div">
+            <h3>Sign Up</h3>
+            <form id="signup_form">
+                <br><br>
+                <label for="username">Pick a username:</label>
+                <input type="text" name="username" id="username" required>
+                <br><br>
+                <label for="email">What's your email:</label>
+                <input type="text" name="email" id="email" required>
+                <br><br>
+                <label for="firstname">What's your first name:</label>
+                <input type="text" name="firstname" id="firstname" required>
+                <br><br>
+                <label for="lastname">What's your last name:</label>
+                <input type="text" name="lastname" id="lastname" required>
+                <br><br>
+                <label for="age">How old are you:</label>
+                <input type="number" name="age" id="age" required>
+                <br><br>
+                <label for="location">Where can people lurk you:</label>
+                <input type="text" name="location" id="location" required>
+                <br><br>
+                <label for="bio">Tell me about yourself</label>
+                <input type="text" name="bio" id="bio" required>
+                <br><br>
+                <label for="password">Create a password:</label>
+                <input type="password" name="password" id="password" required>
+                <br><br>
+                <!-- <label for="confirm_password">Confirm your password:</label>
+                <input type="password" name="confirm_password" id="confirm_password" required> -->
+                <button>Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
