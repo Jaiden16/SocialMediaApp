@@ -152,4 +152,27 @@ router.get('/likedBy/:liker_id', async (req, res) => {
     }
 })
 
+router.get('/likes/:post_id', async (req, res) => {
+    try {
+        let count = await db.any(`
+            SELECT *
+            FROM likes
+            INNER JOIN posts
+            ON likes.post_id = post.id
+            WHERE
+        `)
+        console.log(count)
+        res.json({
+            message: 'SUCCESS: GET/likes/:post_id',
+            count
+        })
+    } catch(error) {
+        res.status(500)
+        res.json({
+            message: 'ERROR: GET/likes/:post_id',
+            error
+        })
+    }
+})
+
 module.exports = router;

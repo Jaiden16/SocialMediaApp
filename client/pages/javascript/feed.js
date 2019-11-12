@@ -16,8 +16,11 @@ async function loadPosts() {
     response.data.payload.forEach((post) => {
         // console.
         let listItem = document.createElement("li");
-        listItem.innerText = `Post: ${post.body} Likes: ${post.likes} Views: ${post.views} \n\n`;
-        postsList.appendChild(listItem);
+        let poster = document.createElement('strong');
+        poster.innerText = post.firstname
+        listItem.innerText = `\nPost: ${post.body}\nLikes: ${post.likes} Views: ${post.views} \n\n`;
+        listItem.prepend(poster)
+        postsList.append(listItem);
     });
 }
 
