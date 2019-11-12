@@ -87,26 +87,26 @@ CREATE TABLE Pictures(
 
 -- Add some users
 INSERT INTO Users(username, password, firstname, lastname, email, age, location, bio)
-    VALUES('DryEraser', '103', 'Adam', 'Addams', 'meow@aol.com', 40, 'New York', 'Nope'),
-          ('SteveJobs', '193', 'Beth', 'Brown', 'meow@chickenbutt.com', 51, 'New York', 'Nope'),
-          ('Expo', '777', 'Cal', 'Cassady', 'meow@pursuit.com', 14, 'New York', 'Nope'),
-          ('JohnDoe87', '456', 'Don', 'Donner', 'meow@gmail.com', 33, 'New York', 'Nope'),
-          ('JaneDoes20', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope'),
-          ('LittleThanos', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Nope');
+    VALUES('DryEraser', '103', 'Adam', 'Addams', 'meow@aol.com', 40, 'New York', 'I’m very choosy. I’m also very suspicious, very irrational and I have a very short temper. I’m also extremely jealous and slow to forgive. Just so you know.'),
+          ('SteveJobs', '193', 'Beth', 'Brown', 'meow@chickenbutt.com', 51, 'New York', 'If you follow me, all of your dreams will come true. I also know the difference between your and you’re but I won’t lord it over you.'),
+          ('Expo', '777', 'Cal', 'Cassady', 'meow@pursuit.com', 14, 'New York', 'Living vicariously through myself'),
+          ('JohnDoe87', '456', 'Don', 'Donner', 'meow@gmail.com', 33, 'New York', 'One day I woke up & I felt bad because blink-182 broke up. Then i remembered all the small things and i went back to sleep and woke up the following morning.'),
+          ('JaneDoes20', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Pudding tastes better with a plastic spoon'),
+          ('LittleThanos', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'I used to act. I also belly dance and eat Jolly Ranchers – not always at the same time though.');
 
 
 -- Add some posts
 INSERT INTO Posts (poster_id, body, views)
-    VALUES(1, 'I am Adam! Hello!', 0),
-          (1, 'I like pancakes', 0),
-          (2, 'I am Beth! Welcome to my blog.', 0),
-          (2, 'My zodiac sign is Gemini', 0),
-          (3, 'I am Cal! This is my first post :)', 0),
-          (4, 'I am Don! Hello world!', 0),
-          (4, 'I enjoy long walks on the beach', 0),
-          (5, 'I am Eve! Welcome!', 0),
-          (5, 'I like turtles', 0),
-          (5, 'My favorite number is 8', 0);
+    VALUES(1, 'Been blocked for a month now, cant like, follow, unfollow or post. Absolutely need it fixed as Im helping someone out with their account and theyre counting on me... getting irritated by the ban... they use it to sell art. what can I do? I have reported it every day :( Im really stressed out', 0),
+          (1, 'Its easy to believe that a corporation as huge as Walmart would give prizes via text. TOO GOOD TO BE TRUE, though. IGNORE texts from "Walmart," or from "whoever," because they are phishing.', 0),
+          (2, 'Its super annoying to me when people are very good at twitter and also really good at instagram and aldo REALLY good at Lurk come on you cant have all three', 0),
+          (2, 'I would love to start an interview series with random people from Lurk called “How Do You Afford Your Life?”', 0),
+          (3, '[detective inspecting my body at the bottom of the grand canyon] looks like the victim was tweeting "more like the bland canyon" and fell in', 0),
+          (4, 'me: Lurk is a cesspool || also me: Lurk has provided 98% of my entertainment for the day', 0),
+          (4, 'I want an app for each website I visit. And I want all of them to have loud videos that play automatically. This is my ideal user experience', 0),
+          (5, 'A bank is a place that will lend you money if you can prove that you don’t need it.', 0),
+          (5, 'Borrow money from a pessimist–they don’t expect it back.', 0),
+          (5, 'What happens if you get scared half to death twice?', 0);
     
 
 -- Add some likes
