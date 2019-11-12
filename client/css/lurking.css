@@ -10,13 +10,17 @@
     box-sizing: border-box;
 }
 
+body {
+  background-color: #1A1A1D;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
   font-family: 'Anton', sans-serif;
-  background-color: #5d4954;
+  background-color: #3A0065;
 }
 
 .logo {
@@ -117,11 +121,11 @@ nav {
 
 #mainDiv {
     width: 80%; 
-    height: 750px;
+    height: 900px;
     margin-left: auto;
     margin-right: auto;
-    background-color: white; 
-    box-shadow: 10px 10px 8px 10px #888888;
+    background-color: #4E4E50; 
+    /* box-shadow: 10px 10px 8px 10px #131212; */
     overflow: scroll;
 }
 
@@ -130,8 +134,8 @@ nav {
   justify-content: space-around;
   align-items: center;
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border: 1px solid #3A0065;
+    background-color: #5A0090;
 }
 
 .tab button {
@@ -145,10 +149,13 @@ nav {
 }
 
 .tab button:hover {
-    background-color: #ddd;
+    background-color: #5A0090;
 }
 
 #mainDiv h1 {
+  color:  rgb(226, 226, 226);
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 5px;
   text-align: center;
   margin: 10px;
 }
@@ -158,9 +165,12 @@ nav {
     margin: 10px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #ddd; 
+    background-color: #1A1A1D ; 
     /* display: flex; */
+}
 
+.userProfile button {
+  width: 90px;
 }
 
 .profilePic {
@@ -174,13 +184,15 @@ nav {
   margin: 10px;
   margin-left: auto;
   margin-right: auto;
-  background-color: #ddd; 
+  background-color: #1A1A1D ; 
 }
 
-.post p {
+.post p, .userProfile p {
+  width: 90%;
   padding: 5px; 
   border-style: solid;
-  border-color:grey;
+  border-color: #5A0090; ;
+  background-color: grey;
   border-width: 2px;
   border-radius: 20px;
 }
@@ -190,5 +202,9 @@ nav {
   border-radius: 150px;
 }
 
-
-
+#mainDiv h2 {
+  color:  rgb(226, 226, 226);
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 5px;
+  font-size: 15px;
+}

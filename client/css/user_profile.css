@@ -10,13 +10,17 @@
     box-sizing: border-box;
 }
 
+body {
+  background-color: #1A1A1D;
+}
+
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
   font-family: 'Anton', sans-serif;
-  background-color: #5d4954;
+  background-color: #3A0065;
 }
 
 .logo {
@@ -131,11 +135,10 @@ nav {
 
 #mainDiv {
   width: 80%; 
-  height: 750px;
+  height: 900px;
   margin-left: auto;
   margin-right: auto;
-  background-color: white; 
-  box-shadow: 10px 10px 8px 10px #888888;
+  background-color: #4E4E50; 
+  /* box-shadow: 10px 10px 8px 10px #131212; */
   overflow: scroll;
-  padding: 10px;
 }
