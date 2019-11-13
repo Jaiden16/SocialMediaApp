@@ -47,11 +47,11 @@ router.get('/:user_id', async (req, res) => {
     let insertQuery = `
         SELECT * 
         FROM users
-        WHERE id = '${req.params.user_id}'
+        WHERE id = $1
     `
     
     try {
-        let user = await db.one(insertQuery)
+        let user = await db.one(insertQuery, [req.params.user_id])
         res.json({
             payload: user, 
             message: "Success you've reached /users"
