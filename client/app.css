@@ -1,106 +1,67 @@
 html, body{
+    /* margin: 0; */
     height: 100%;
-    margin: 0;
-    background-color: grey;
+    background: url("PHOTO-2019-11-11-22-58-05.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
+
 #container{
     height: 93%;
     display: grid;
     grid-template-columns: 50% 50%;
-    background-color: gray; 
     overflow: hidden;
 }
 #left, #right{
     height: 100%;
 }
-#small{
-    display: inline-block;
-    width: 800px;
-    height: auto;
+
+#top_right {
+    height: 50%
+ }
+
+#info {
+    height: 50%
 }
-#right{
-    background-color: gray;
+
+/* #right{
     display: flex; 
     justify-content: center;   
-}
-#info{
-    display:relative;
-    top:20px;
-}
-#left{
+} */
+
+/* #left{
     display: flex;
     justify-content: center;
     align-items: center;  
-    
-}
-h1{
-   font-size: 27px;
-   line-height: 37px;
-}
-#join{
-    font-size: 18px;
-    line-height: 24px;
-    margin: 16px auto;
-}
-#footer{
-    display: grid;
-    grid-column: 1 / 6;
-    grid-row: 4;
-    text-align: center;
-    background-color: #fff;
-    border-top: 1px solid #e6ecf0;
-}
+} */
 
-div>a, ul>li {
-    color:#aab8c2;
-    padding-left: 263px;
-  }
-#blue_text{
+#white_text{
    max-width: 440px;
    padding: 16px;
    color: white;
 }
+
+
 .heading{
     font-size: 20px;
     font-weight: bold;
 }
-#first{
-    display:flex;
-    align-items: center;
-}
-#second{
-    display:flex;
-    align-items: center;
-}
-#third{
-    display:flex;
-    align-items: center;
-}
- .paragraph{ 
-    display: inline-block;
-} 
-.icon{
-    font-size:20px;
-    margin-right: 20px;
-}
-.foot{
-    display: inline-block;
-    list-style: none;
-}
+
+
 a{
-    color:#aab8c2;
-    text-decoration: none;
+ color:#aab8c2;
+  text-decoration: none;
 }
+
 a:hover{
+    /* color: blueviolet; */
     text-decoration: underline;
 }
+
 .foot{
     padding: 0 9px 0 9px;
     font-size: 12px;
 }
-#white_text{
-    max-width: 350px;
- }
+
 .small{
     font-size: 45px;
     color:#1da1f2;
@@ -124,7 +85,8 @@ a:hover{
     display:relative;
 }
 #signup_big:hover{
-    background: red;
+    background: blueviolet;
+
 }
 #signup_big:focus {
     box-shadow: 0 0 0 2px #fff, 0 0 0 4px #71c9f8;
@@ -169,7 +131,22 @@ a:hover{
     align-items: center;
     position: relative;
     top: 105px;
+    height: 100%;
  }
+
+ 
+ #black_text{
+    max-width: 350px;
+ }
+
+ #black_text h1 {
+     color: white;
+ }
+
+ #black_text h2 {
+    color: white;
+}
+
  .login_small{
     background-color:white;
     border: 1px solid #1da1f2;
@@ -296,4 +273,9 @@ a:hover{
         top:-220px;
         left:35px;
      }
+}
+
+#right {
+    right: 0;
+    bottom: 0;
 }
