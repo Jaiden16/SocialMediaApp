@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     console.log('Dom loaded')
     navSlide();
+    document.querySelectorAll('.albums .album').forEach(album => album.addEventListener('click', showAlbumPics))
 })
 
 
@@ -25,4 +26,8 @@ const navSlide = () => {
     //user profile animation
     user_profile.classList.toggle('toggle');
 });
+}
+
+const showAlbumPics = () => {
+    
 }

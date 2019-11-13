@@ -15,8 +15,10 @@ const commentRouter = require('./routes/commentRouter');
 const albumRouter = require('./routes/albumRouter');
 const photosRouter = require('./routes/photosRouter');
 const lurksRouter = require('./routes/lurkRouter');
+const sessions = require('./routes/sessions');
 
 
+app.use('/session', sessions);
 app.use('/users', userRouter);
 app.use('/posts', postRouter);
 app.use('/likes', likeRouter);

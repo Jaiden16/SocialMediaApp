@@ -4,7 +4,7 @@ CREATE DATABASE lurk_db;
 
 \c lurk_db
 
-DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS usersessions;
 
 DROP TABLE IF EXISTS pictures;
 
@@ -88,10 +88,11 @@ CREATE TABLE Pictures(
 );
 
 -- keeps track of who is logged in
-CREATE TABLE sessions(
-    user_id_logged_in INT REFERENCES Users (id) ON DELETE CASCADE,
-    user_password VARCHAR REFERENCES Users (password) ON DELETE CASCADE
-)
+CREATE TABLE usersessions( 
+    id SERIAL PRIMARY KEY,
+    useridloggedin INT REFERENCES Users (id) ON DELETE CASCADE
+    -- userpassword VARCHAR REFERENCES Users (password) ON DELETE CASCADE
+);
 
 -- Add some users
 INSERT INTO Users(username, password, firstname, lastname, email, age, location, bio)
@@ -180,6 +181,9 @@ INSERT INTO Pictures(album_id, pic, likes, views)
           (5, 'url', 3, 8),
           (5, 'url', 3, 9);
 
+INSERT INTO usersessions(useridloggedin)
+    VALUES(1);
+
 -- Let's verify that the users and posts were inserted 
 SELECT * FROM Users;
 SELECT * FROM Posts;
@@ -188,4 +192,4 @@ SELECT * FROM Comments;
 SELECT * FROM Lurks;
 SELECT * FROM Albums;
 SELECT * FROM Pictures;
-SELECT * FROM sessions;
+SELECT * FROM usersessions;
