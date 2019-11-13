@@ -65,7 +65,7 @@ nav {
     transition: all 0.3s ease;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     body {
         overflow-x: hidden;
     }
@@ -79,9 +79,10 @@ nav {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 40%;
+        width: 25%;
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
+        z-index: 1000;
     }
 
     .nav-links li {
@@ -93,7 +94,7 @@ nav {
     }
 
     .nav-active {
-        transform: translateX(0%);
+        transform: translateX(-300%);
 
     }
 }

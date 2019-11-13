@@ -159,6 +159,7 @@ nav {
 
 .front img {
   height: 100%;
+  width: 100%
 }
 
 .front {
@@ -166,7 +167,7 @@ nav {
 }
 
 .back {
-  background: #f1f1f1;
+  background: #fffdd0;
   transform: perspective(600px) rotateY(180deg);
 }
 
