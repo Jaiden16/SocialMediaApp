@@ -63,4 +63,20 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.delete('/', async (req, res) => {
+    try {
+        await db.none(`DELETE FROM usersessions`)
+        res.json({
+            message: `You've logged out of your session`
+        })
+    } catch(error) {
+        console.log(error)
+        res.status(500)
+        res.json({
+            message: "you've reached an error with sessions",
+            error
+        })
+    }
+})
+
 module.exports = router;

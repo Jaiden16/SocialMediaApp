@@ -1,5 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // let {data} = await axios.delete(`http://localhost:3000/session`, {username, password});
+document.addEventListener('DOMContentLoaded', async () => {
+    let {data} = await axios.get('http://localhost:3000/session')
+    if (data.session.length !== 0) {
+        window.location.href = './pages/feed.html'
+    }
     console.log('Dom loaded')
     hideForm()
     addEventListeners()
