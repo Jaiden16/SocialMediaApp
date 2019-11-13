@@ -22,7 +22,13 @@ const addFormSubmitted = async (event) => {
     formInputs.forEach(input => postBody[input.id] = input.value)
 
     let {data} = await axios.post(obj[form].postURL, postBody);
-    window.location.href = './feed.html'
+    submitUserToSession(data.payload)
+    console.log(data.payload)
+    // window.location.href = './feed.html'
     return data.payload
 }
 
+const submitUserToSession = async (user) => {
+    
+
+}

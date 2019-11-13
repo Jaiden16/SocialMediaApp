@@ -5,7 +5,7 @@ const router = express.Router();
 const db = require('./config')
 
 router.get('/', async (req, res) => {
-    console.log('reached endpoint users/')
+    console.log('reached endpoint users/', Date())
     try {
         let users = await db.any(`
             SELECT * 
