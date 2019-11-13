@@ -26,11 +26,11 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
     let insertQuery = 
-        `INSERT INTO users(username, password, firstname, lastname, email, age, location, bio)
-            VALUES($1, $2, $3, $4, $5, $6, $7, $8)`
+        `INSERT INTO users(username, password, firstname, lastname, email, age, location, bio, profile_pic)
+            VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)`
 
     try {
-        await db.none(insertQuery, [req.body.username, req.body.password, req.body.firstname, req.body.lastname, req.body.email, req.body.age, req.body.location, req.body.bio])
+        await db.none(insertQuery, [req.body.username, req.body.password, req.body.firstname, req.body.lastname, req.body.email, req.body.age, req.body.location, req.body.bio, req.body.profile_pic])
         res.json({
             payload: req.body, 
             message: 'POST request arrivesd at users/register',

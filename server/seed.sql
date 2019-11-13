@@ -182,8 +182,8 @@ INSERT INTO Pictures(album_id, pic, likes, views)
           (5, 'url', 3, 8),
           (5, 'url', 3, 9);
 
-INSERT INTO usersessions(useridloggedin)
-    VALUES(1);
+-- INSERT INTO usersessions(useridloggedin)
+--     VALUES(1);
 
 -- Let's verify that the users and posts were inserted 
 SELECT * FROM Users;

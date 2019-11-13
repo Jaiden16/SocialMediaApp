@@ -1,33 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     console.log('Dom loaded')
     navSlide();
+    let user_id = await getSession()
+    if (!user_id) return
+    console.log(user_id)
+    let userProfile = await getUser(user_id)
     document.querySelectorAll('.albums .album').forEach(album => album.addEventListener('click', showAlbumPics))
 })
 
-
-const navSlide = () => {
-    const user_profile = document.querySelector('.user-profile');
-    const nav = document.querySelector(".nav-links");
-    const navLinks = document.querySelectorAll('.nav-links li')
-
-    user_profile.addEventListener("click", () => {
-    //toggle nav
-    nav.classList.toggle('nav-active');
-
-    //animate links
-    navLinks.forEach((link, index) => {
-        if(link.style.animation) {
-            link.style.animation = '';
-        } else {
-            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`
-        }
-    });
-
-    //user profile animation
-    user_profile.classList.toggle('toggle');
-});
-}
-
 const showAlbumPics = () => {
-    
+
 }
