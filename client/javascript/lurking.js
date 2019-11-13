@@ -1,8 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     console.log('Dom loaded')
     addEventListeners();
     navSlide();
-    populateUsers();
+    let user_id = await getSession();
+    populateUsers(user_id);
     // populatePosts();
 })
 
@@ -56,12 +57,13 @@ const displayPosts = () => {
 }
 // postsList.innerHTML = "";
 
-async function populateUsers() {
+async function populateUsers(userID) {
+    console.log(userID)
     const allUsers = document.querySelector("#listAllLurked");
     const allUsersPosts = document.querySelector("#listAllLurkedPosts");
     allUsers.innerHTML = "";
     allUsersPosts.innerHTML = "";
-    const response = await axios.get(`http://localhost:3000/lurks/2`); //switch the user_id '2' with the logged in user
+    const response = await axios.get(`http://localhost:3000/lurks/${userID}`); //switch the user_id '2' with the logged in user
     response.data.payload.forEach(async (lurked) => {
         let userProfile = document.createElement('div')
         let profilePic = document.createElement('img')
