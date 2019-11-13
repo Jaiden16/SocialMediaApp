@@ -222,3 +222,16 @@ nav {
   letter-spacing: 5px;
   font-size: 15px;
 }
+
+.material-icons {
+  color: blueviolet;
+}
+
+span {
+  color: white;
+}
+
+#iconsDiv {
+  display: flex;
+  justify-content: space-between;
+}

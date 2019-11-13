@@ -41,15 +41,15 @@ router.get('/posts/:post_id', async (req, res) => {
     }
 })
 
-router.post('/posts/:post_id', async (req, res) => {
+router.post('/posts/:liker_id/:post_id', async (req, res) => {
     try {
         await db.none(`
             INSERT INTO likes(liker_id, post_id)
             VALUES($1, $2)
-            `, [req.body.liker_id, req.params.post_id]
+            `, [req.params.liker_id, req.params.post_id]
         )
         res.json({
-            payload: [req.body.liker_id, req.params.post_id], 
+            payload: [req.params.liker_id, req.params.post_id], 
             message: "Success you've reached /likes"
         })
     } catch(error) {

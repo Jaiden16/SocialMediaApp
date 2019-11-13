@@ -20,6 +20,7 @@ router.get('/:owner_id', async (req, res) => {
         res.status(500)
         res.json({
             message: 'error',
+            error
         })
     }
 })

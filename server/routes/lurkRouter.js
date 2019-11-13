@@ -88,15 +88,15 @@ router.delete('/deleteLurk/:user_id/:lurker_username', async (req, res) => {
     }
 })
 
-router.post('/addLurk/:user_id', async (req, res) => {
+router.post('/addLurk/:user_id/:lurker_username', async (req, res) => {
     try {
         await db.none(`
             INSERT INTO lurks(user_id, lurker_username)
             VALUES($1, $2)
-        `, [req.params.user_id, req.body.lurker_username]
+        `, [req.params.user_id, req.params.lurker_username]
         )
         res.json({
-            payload: [req.params.user_id, req.body.lurker_username],
+            payload: [req.params.user_id, req.params.lurker_username],
             message: "Success you've reached /likes"
         })
     } catch(error) {
