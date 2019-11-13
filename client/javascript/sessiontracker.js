@@ -17,6 +17,12 @@ const navSlide = () => {
     const user_profile = document.querySelector('.user-profile');
     const nav = document.querySelector(".nav-links");
     const navLinks = document.querySelectorAll('.nav-links li')
+    const logOut = navLinks[navLinks.length - 1]
+
+    logOut.addEventListener('click', async (event) => {
+        await axios.delete(`http://localhost:3000/session`);
+        window.location.href = './../App.html'
+    })
 
     user_profile.addEventListener("click", () => {
         //toggle nav
