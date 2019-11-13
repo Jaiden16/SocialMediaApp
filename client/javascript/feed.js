@@ -35,8 +35,8 @@ const navSlide = () => {
 
     //user profile animation
     user_profile.classList.toggle('toggle');
-});
-}
+};
+
 
 async function loadPosts() {
     const postsList = document.querySelector('#randomFeedList');
