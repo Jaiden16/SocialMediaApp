@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile Page</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../javascript/sessiontracker.js"></script>
+    <script src="../javascript/user_profile.js"></script>
+    <link rel="stylesheet" href="../css/user_profile.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h2>LURK</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="./user_profile.html">Home</a></li>
+            <li><a href="./feed.html">Feed</a></li>
+            <li><a href="./album.html">Albums</a></li>
+            <li><a href="./lurking.html">Lurking</a></li>
+            <li><a href="./games.html">Games</a></li>
+        </ul>
+
+        <div class="search-bar">
+            <input id="searchBar" type="text" placeholder="Search"></input>
+        </div>
+
+        <div class="user-profile">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
+    </nav>
+
+    <div id="gradient"></div>
+    <div id="card">
+        <img src="http://cdn.osxdaily.com/wp-content/uploads/2014/07/users-and-groups-icon-mac.png" alt="">
+        <h2>User Name</h2>
+        <p>Bio information</p>
+        <p>More information maybe
+        <br><br>
+        <span class ="lurking_amount">
+            <ul>
+                <li>Lurks and Stuff</li>
+            </ul>
+        </span>
+        </p>
+        <span class="left bottom">Age: 40</span>
+        <span class="right bottom">Email and Location</span>
+    </div>
+
+</body>
+
+</html>

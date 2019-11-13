@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lurking</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../javascript/sessiontracker.js"></script>
+    <script src="../javascript/lurking.js"></script>
+    <link rel="stylesheet" href="../css/lurking.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <h2>LURK</h2>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="./user_profile.html">Home</a></li>
+            <li><a href="./feed.html">Feed</a></li>
+            <li><a href="./album.html">Albums</a></li>
+            <li><a href="./lurking.html">Lurking</a></li>
+            <li><a href="./games.html">Games</a></li>
+        </ul>
+
+        <div class="search-bar">
+            <input id="searchBar" type="text" placeholder="Search"></input>
+        </div>
+
+        <div class="user-profile">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <div id="mainDiv">
+        <div class="tab">
+            <button class="tablinks" id="usersLurking">
+                <h2>USERS</h2>
+            </button>
+            <button class="tablinks" id="postsLurking">
+                <h2>POSTS</h2>
+            </button>
+        </div>
+
+        <div id="allUserProfiles">
+            <h1> Lurking </h1>
+            <ul id="listAllLurked">
+
+                <div class="userProfile">
+                    <img class="profilePic"
+                        src="https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1"
+                        alt="user profile picture">
+                    <h2>Username</h2>
+                    <p>This is the user's bio</p>
+                    <button class="unfollow">Unlurk</button>
+                </div>
+
+                <div class="userProfile">
+                    <img class="profilePic"
+                        src="https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1"
+                        alt="user profile picture">
+                    <h2>Username</h2>
+                    <p>This is the user's bio</p>
+                    <button class="unfollow">Unlurk</button>
+                </div>
+
+            </ul>
+        </div>
+
+        <div id="allPosts">
+            <h1> Lurking Posts </h1>
+
+            <ul id="listAllLurkedPosts">
+                <div class="post">
+                    <img class="postProfilePic"
+                        src="https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1"
+                        alt="user profile picture">
+                    <h2>Username</h2>
+                    <p>This is the post</p>
+                </div>
+
+                <div class="post">
+                    <img class="postProfilePic"
+                        src="https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1"
+                        alt="user profile picture">
+                    <h2>Username</h2>
+                    <p>This is the post</p>
+                </div>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
