@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="app.css" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./javascript/signup.js"></script>
     <script src="./app.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
     <title>Lurk</title>
@@ -19,8 +21,10 @@
             </div>
             <div id="formDiv">
                     <form id="signup_form">
-                            <!-- <br><br> -->
                             <h3>Create an account</h3>
+                            <label for="profile_pic">Pic a profile picture:</label><br>
+                            <input type="text" name="profile_pic" id="profile_pic" placeholder="Picture Url" required>
+                            <br><br>
                             <label for="username">Pick a username:</label><br>
                             <input type="text" name="username" id="username" placeholder="Username" required>
                             <br><br>
@@ -53,7 +57,6 @@
 
         </div>
 
-
         <div id='right'>
             <div id='info'>
                 <div id='white_box'>
@@ -65,14 +68,13 @@
             <div id='top_right'>
                 <div id='black_text'>
                     <br> <br>
-                    <input class="inputBox" type="text" placeholder='Username'> <br><br>
-                    <input class="inputBox" type="text" placeholder='Password'>
-
+                    <div id="inputDiv">
+                        <input class="inputBox" id="usernameInput" type="text" placeholder='Username'> <br><br>
+                        <input class="inputBox" id="passwordInput" type="text" placeholder='Password'>
+                    </div>
                     <h2 id='join'> Join Lurk today </h2>
                     <button class='main' id='signup_big'>
-                        <!-- <a href="./pages/signup.html"> -->
                             Sign Up
-                        <!-- </a> -->
                     </button>
                     <br>
                     <button class='main' id='login_big'>

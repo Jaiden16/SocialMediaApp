@@ -17,5 +17,8 @@ const addEventListener = () => {
 const displayForm = () => {
     let formDiv = document.querySelector("#formDiv")
     formDiv.style.display = 'block'
+
+    let inputDiv = document.querySelector("#inputDiv")
+    inputDiv.style.display = 'none'
 }
 
