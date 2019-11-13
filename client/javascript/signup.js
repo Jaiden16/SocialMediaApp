@@ -8,7 +8,7 @@ let obj = {
         listID: '#signup_form',
         getURL: () => `http://localhost:3000/users`,
         postURL: `http://localhost:3000/users/`,
-        innerText: (user) => `${user.firstname} ${user.lastname}, age ${user.age}`,
+        
     },
 }
 
@@ -29,6 +29,7 @@ const addFormSubmitted = async (event) => {
 }
 
 const submitUserToSession = async (user) => {
-    
-
+    console.log(user)
+    let {data} = await axios.post(`http://localhost:3000/session`, {username: user.username, password: user.password});
+    console.log('asdfasdfasdfasdfa', data)
 }
