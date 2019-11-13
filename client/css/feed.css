@@ -180,9 +180,11 @@ nav {
 #formDiv {
   margin: 10px;
   background-color: blueviolet;
-  width: 50%;
+  width: 80%;
   height: 25%;
   border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #formDiv textarea {
