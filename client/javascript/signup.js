@@ -24,7 +24,7 @@ const addFormSubmitted = async (event) => {
     let {data} = await axios.post(obj[form].postURL, postBody);
     submitUserToSession(data.payload)
     console.log(data.payload)
-    // window.location.href = './feed.html'
+    window.location.href = './feed.html'
     return data.payload
 }
 
