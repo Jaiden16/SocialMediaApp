@@ -136,17 +136,17 @@ INSERT INTO likes (liker_id, post_id)
     
 
 -- Add some comments
-INSERT INTO Comments (post_id, body, likes, views)
-    VALUES(1, 'I am Ad343434am! Hello!', 0, 0),
-          (1, 'I like pa3434342342ncakes', 0, 0),
-          (2, 'I am Bet23534134134h! Welcome to my blog.', 0, 0),
-          (2, 'My zodiac13513413414 sign is Gemini', 0, 0),
-          (3, 'I am Cal! 1351341414141This is my first post :', 0, 0),
-          (4, 'I am Do1415135134134n! Hello world!', 0, 0),
-          (4, 'I enjoy141414135134 long walks on the beach', 0, 0),
-          (5, 'I am Ev341313131e! Welcome!', 0, 0),
-          (5, 'I like t135134134134urtles', 0, 0),
-          (5, 'My favor1351341351313ite number is 8', 0, 0);
+INSERT INTO Comments (commenter_id, post_id, body, likes, views)
+    VALUES(1, 4, 'I am Ad343434am! Hello!', 0, 0),
+          (1, 5, 'I like pa3434342342ncakes', 0, 0),
+          (2, 2, 'I am Bet23534134134h! Welcome to my blog.', 0, 0),
+          (2, 5, 'My zodiac13513413414 sign is Gemini', 0, 0),
+          (3, 10, 'I am Cal! 1351341414141This is my first post :', 0, 0),
+          (4, 9, 'I am Do1415135134134n! Hello world!', 0, 0),
+          (4, 1, 'I enjoy141414135134 long walks on the beach', 0, 0),
+          (5, 3, 'I am Ev341313131e! Welcome!', 0, 0),
+          (5, 6, 'I like t135134134134urtles', 0, 0),
+          (5, 7, 'My favor1351341351313ite number is 8', 0, 0);
 
 
 -- Add some lurks
