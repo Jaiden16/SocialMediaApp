@@ -125,6 +125,79 @@ nav {
   margin-left: auto;
   margin-right: auto;
   background-color: #4E4E50; 
-  /* box-shadow: 10px 10px 8px 10px #131212; */
   overflow: scroll;
+}
+
+#mainDiv h1 {
+  color:  rgb(226, 226, 226);
+  font-family: 'Anton', sans-serif;
+  letter-spacing: 5px;
+  text-align: center;
+  margin: 15px;
+}
+
+
+.post {
+  width: 70%;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 100% ; 
+  grid-gap: 10px;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #1A1A1D ; 
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.post p {
+  width: 100%;
+  padding: 5px; 
+  border-style: solid;
+  border-color: #5A0090; ;
+  background-color: grey;
+  border-width: 2px;
+  border-radius: 20px;
+}
+
+.postProfilePic {
+  width: 15%;
+  border-radius: 150px;
+}
+
+#mainDiv h2, h3 {
+  color:  rgb(226, 226, 226);
+  font-family: 'Anton', sans-serif;
+}
+
+#mainDiv h2 {
+  letter-spacing: 4px;
+  font-size: 20px;
+  margin: 10px;
+}
+
+#formDiv {
+  margin: 10px;
+  background-color: blueviolet;
+  width: 50%;
+  height: 25%;
+  border-radius: 10px;
+}
+
+#formDiv textarea {
+  margin: 5px;
+}
+
+.material-icons {
+  color: blueviolet;
+}
+
+#randomFeedList {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 20px;
 }

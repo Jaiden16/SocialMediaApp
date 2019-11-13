@@ -108,9 +108,16 @@ async function populatePosts(posts) {
     
     posts.forEach((post) => {
         console.log("Stuff", post)
+        let paraDiv = document.createElement('div')
+        let postProfilePic = document.createElement('img')
+        let username = document.createElement('h2')
         let userPost = document.createElement('p')
-        userPost.innerText = post.body + '\n\n'
-        lurkedUserPosts.append(userPost)
+        
+        paraDiv.setAttribute('class', 'paraDiv')
+        userPost.innerText = post.body
+    
+        paraDiv.append(userPost)
+        lurkedUserPosts.append(paraDiv)
     })
     allUsersPosts.append(lurkedUserPosts)
 }
