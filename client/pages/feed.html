@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Feed</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../javascript/feed.js"></script>
     <link rel="stylesheet" href="../css/feed.css">
@@ -40,17 +41,16 @@
 
     <div id="mainDiv">
         <div id="formDiv">
-            <h2>Add Post</h2>
+            <h2>Add a new Post</h2>
             <form id="addPostForm">
-                <p>Message: <textarea type="text" id='post-message' style='width:60%' required></textarea></p>
+                <textarea type="text" id='post-message'  placeholder='Enter post here' style='width:70%' rows='10' required></textarea>
                 <button>Submit</button>
             </form>
         </div>
 
         <div id="feedDiv">
-            <h2>User Feed</h2>
+            <h1>User Feed</h1>
             <ul id="randomFeedList">
-
             </ul>
         </div>
 

@@ -125,7 +125,6 @@ nav {
     margin-left: auto;
     margin-right: auto;
     background-color: #4E4E50; 
-    /* box-shadow: 10px 10px 8px 10px #131212; */
     overflow: scroll;
 }
 
@@ -145,7 +144,6 @@ nav {
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
-    /* transition: 0.3s; */
 }
 
 .tab button:hover {
@@ -166,7 +164,8 @@ nav {
     margin-left: auto;
     margin-right: auto;
     background-color: #1A1A1D ; 
-    /* display: flex; */
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .userProfile button {
@@ -178,17 +177,32 @@ nav {
     border-radius: 150px;
 }
 
+
+#listAllLurkedPosts {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap: 20px;
+}
+
 .post {
   width: 70%;
-  height: 200px; 
   margin: 10px;
+  display: grid;
+  grid-template-columns: 100% ; 
+  grid-gap: 10px;
+  align-items: center;
   margin-left: auto;
   margin-right: auto;
   background-color: #1A1A1D ; 
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .post p, .userProfile p {
-  width: 90%;
+  width: 100%;
   padding: 5px; 
   border-style: solid;
   border-color: #5A0090; ;

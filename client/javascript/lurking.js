@@ -99,17 +99,20 @@ async function populatePosts(posts) {
         console.log("Stuff", post)
         const allUsersPosts = document.querySelector("#listAllLurkedPosts");
         let lurkedUserPosts = document.createElement('div')
+        let paraDiv = document.createElement('div')
         let postProfilePic = document.createElement('img')
         let username = document.createElement('h2')
         let userPost = document.createElement('p')
         
+        paraDiv.setAttribute('class', 'paraDiv')
         lurkedUserPosts.setAttribute('class', 'post')
         postProfilePic.setAttribute('class', 'postProfilePic')
         postProfilePic.src = "https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1"
         username.innerText = post.username
         userPost.innerText = post.body
     
-        lurkedUserPosts.append(postProfilePic, username, userPost)
+        paraDiv.append(userPost)
+        lurkedUserPosts.append(postProfilePic, username, paraDiv)
         allUsersPosts.append(lurkedUserPosts)
     
     })
