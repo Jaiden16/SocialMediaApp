@@ -98,7 +98,7 @@ a:hover{
 
 #login_big{
         background-color: purple;
-        border: 1px solid red;
+        border: 1px solid black;
         color: white;
         border-radius: 100px;
         cursor: pointer;
@@ -111,7 +111,7 @@ a:hover{
         width:351px;
     }
 #login_big:hover{
-    background: red;
+    background: paleturquoise;
     color: black;
 }
 
