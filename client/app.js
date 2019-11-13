@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('Dom loaded')
     hideForm()
-    addEventListener()
+    addEventListeners()
 })
 
 const hideForm = () => {
@@ -9,9 +9,12 @@ const hideForm = () => {
     formDiv.style.display = 'none'
 }
 
-const addEventListener = () => {
+const addEventListeners = () => {
     let signUpBtn = document.querySelector("#signup_big")
+    let loginForm = document.querySelector("#login_form")
+    
     signUpBtn.addEventListener('click', displayForm)
+    loginForm.addEventListener('submit', logUserIn)
 }
 
 const displayForm = () => {
@@ -22,3 +25,19 @@ const displayForm = () => {
     inputDiv.style.display = 'none'
 }
 
+const logUserIn = async (event) => {
+    event.preventDefault()
+    let username = document.querySelector('#usernameInput').value
+    let password = document.querySelector('#passwordInput').value
+    
+    let {data} = await axios.post(`http://localhost:3000/session`, {username, password});
+    console.log(data)
+    submitUserToSession(data)
+    window.location.href = './pages/feed.html'
+}
+
+// const submitUserToSession = async (user) => {
+//     console.log(user)
+//     let {data} = await axios.post(`http://localhost:3000/session`, {username: user.username, password: user.password});
+//     console.log('asdfasdfasdfasdfa', data)
+// }
