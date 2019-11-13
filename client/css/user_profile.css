@@ -118,27 +118,127 @@ nav {
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
-.userInfo {
+/* .userInfo {
     height: 300px;
     width: 300px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     
-}
+} */
 
-.userInfo img{
+/* .userInfo img{
     height: 70%;
     
     border-radius: 50%;
+} */
+
+/* .container {
+  width: 90%;
+  margin: 0 auto;
+} */
+
+/* .cover_profile {
+  width: 100%;
+  border: 1px solid white;
+  height: 500px;
+} */
+
+/* .cover_profile .cover {
+  width: 100%;
+  height: 350px;
+  border: 1px solid black;
+} */
+
+/* .cover_profile .cover img {
+  width: 100%;
+  height: 350px;
+} */
+
+.left {
+  left: 25px;
 }
 
-#mainDiv {
-  width: 80%; 
-  height: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #4E4E50; 
-  /* box-shadow: 10px 10px 8px 10px #131212; */
-  overflow: scroll;
+.right {
+  right: 25px;
+}
+
+.center {
+  text-align: center;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 25px;
+}
+
+#gradient {
+  background: #999955;
+  background-image: linear-gradient(#dab046 20%, #D73B25 20%,
+  #D73B25 40%, #C71B25 40%, #C71B25 40%, #961A39 60%,
+  #961A39 80%, #601035 80%);
+  margin: 0 auto;
+  margin-top: 100px;
+  width: 100%;
+  height: 150px;
+}
+
+#gradient:after {
+  content: "";
+  position: absolute;
+  background: #E9E2D0;
+  left: 50%;
+  margin-top: -55.0px;
+  margin-left: -270px;
+  padding-left: 20px;
+  border-radius: 5px;
+  width: 520px;
+  height: 275px;
+  z-index: -1;
+}
+
+#card {
+  position: absolute;
+  width: 500px;
+  height: 225px;
+  padding: 25px;
+  padding-top: 0;
+  padding-bottom: 0;
+  left: 50%;
+  top: 127.5px;
+  margin-left: -250px;
+  background:#E9E2D0;
+  box-shadow: -20px 0 35px -25px black,
+  20px 0 35px -25px black;
+  z-index: 5;
+}
+
+#card img {
+  width: 150px;
+  float: left;
+  border-radius: 5px;
+  margin-right: 20px;
+  transform: all 0.5s ease-in;
+}
+
+#card h2 {
+  font-family: tahoma;
+  color: #333;
+  margin: 0 auto;
+  padding: 0;
+  font-size: 13pt;
+}
+
+#card p {
+  font-family: tahoma;
+  color: #555;
+  font-size: 12px;
+}
+
+#card span {
+  font-family: tahoma;
+  font-size: 10px;
+  font-weight: bold;
+  color: #555;
+
 }
