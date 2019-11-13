@@ -7,15 +7,21 @@ const db = require('./config')
 //gets feed list of all posts and the user who posted
 router.get('/', async (req, res) => {
     console.log('you hit posts/ endpoint')
+    // let posts = await db.any(`
+    // SELECT 
+    //     id, posts.poster_id, users.username AS User_name, ARRAY_AGG (posts.body) All_UserPosts
+    // FROM posts, users
+    // WHERE posts.poster_id = users.id
+    // GROUP BY 
+    //     User_name
+    // ORDER BY 
+    //     All_UserPosts DESC; 
+    // `)
     let posts = await db.any(`
-    SELECT 
-        users.username AS User_name, ARRAY_AGG (posts.body) All_UserPosts
-    FROM posts, users
-    WHERE posts.poster_id = users.id
-    GROUP BY 
-        User_name
-    ORDER BY 
-        All_UserPosts DESC; 
+        SELECT 
+            *
+        FROM users, posts
+        WHERE posts.poster_id = users.id 
     `)
     try {
         res.json({
@@ -26,6 +32,7 @@ router.get('/', async (req, res) => {
         res.status(500)
         res.json({
             message: 'error',
+            error
         })
     }
 })

@@ -35,3 +35,51 @@ const navSlide = () => {
         user_profile.classList.toggle('toggle');
     });
 }
+
+const deletePost = async (event) => {
+    let post = event.target.parentNode
+    let postID = post.id
+    let data = await axios.delete(`http://localhost:3000/posts/${postID}`)
+    console.log(data)
+    post.parentNode.removeChild(post)
+}
+
+const savePostEdits = async (event) => {
+    let post = event.target.parentNode
+    let button = event.target
+    let editButton = document.createElement('button')
+    let postID = post.id
+    let oldInput = post.querySelector(`.paraDiv textarea`)
+    let newP = document.createElement('p')
+    
+    editButton.innerText = 'EDIT'
+    editButton.addEventListener('click', editPost)
+    
+    newP.innerText = oldInput.value
+    post.replaceChild(editButton, button)
+    post.querySelector(`.paraDiv`).replaceChild(newP, oldInput)
+    let {data} = await axios.patch(`http://localhost:3000/posts/${postID}`, {body: oldInput.value})
+}
+
+const editPost = async (event) => {
+    let post = event.target.parentNode
+    let button = event.target
+    let saveButton = document.createElement('button')
+    let postID = post.id
+    let oldP = post.querySelector(`.paraDiv p`)
+    let newInput = document.createElement('textarea')
+    
+    saveButton.innerText = 'SAVE'
+    saveButton.addEventListener('click', savePostEdits)
+    newInput.style.width = '70%'
+    newInput.style.resize = 'none'
+    newInput.style.rows = 10
+    newInput.value = oldP.innerText
+    post.replaceChild(saveButton, button)
+    console.log(post, oldP)
+    post.querySelector(`.paraDiv`).replaceChild(newInput, oldP)
+
+    console.log(data, post, postID)
+    // post.parentNode.removeChild(post)
+}
+
