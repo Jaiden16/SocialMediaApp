@@ -173,14 +173,14 @@ INSERT INTO Albums(user_owner_id, album_name, likes, views)
 
 -- Add pictures to album
 INSERT INTO Pictures(album_id, pic, likes, views)
-    VALUES(1, 'url', 3, 2),
-          (2, 'url', 3, 1),
-          (2, 'url', 3, 5),
-          (2, 'url', 3, 7),
-          (3, 'url', 3, 7),
-          (4, 'url', 3, 6),
-          (5, 'url', 3, 8),
-          (5, 'url', 3, 9);
+    VALUES(1, 'http://images5.fanpop.com/image/photos/31000000/haters-gonna-hate-random-31076705-550-413.jpg', 3, 2),
+          (2, 'https://funzumo.com/wp-content/uploads/2019/04/27-Funny-Animal-Memes-To-Make-You-Laugh-Till-You-Drop-1.jpg', 3, 1),
+          (2, 'http://totallynailedit.com/wp-content/uploads/2015/05/quotbefore-we-get-into-it-iamp39ll-say-it-i-do-look-adorable-in-this-tiny-sombreroquot-1430838014461.jpg', 3, 5),
+          (2, 'https://amazinganimalphotos.com/wp-content/uploads/2014/11/Home-alone-funny-cat-meme.jpg', 3, 7),
+          (3, 'http://funnyminionsmemes.com/wp-content/uploads/2016/12/30-Best-Funny-Animal-Memes-of-all-times-15-Funny-memes-Animals.jpg', 3, 7),
+          (4, 'https://www.justviral.net/wp-content/uploads/2019/05/Funny-Animals-Memes-For-You-1.jpg', 3, 6),
+          (5, 'https://www.rd.com/wp-content/uploads/2019/04/Hilarious-Dog-Memes-FT.jpg', 3, 8),
+          (5, 'http://laugh4humor.com/wp-content/uploads/2015/07/ATT00061.jpg', 3, 9);
 
 -- INSERT INTO usersessions(useridloggedin)
 --     VALUES(1);
