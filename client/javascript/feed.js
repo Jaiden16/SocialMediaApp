@@ -9,7 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
-
 const navSlide = () => {
     const user_profile = document.querySelector('.user-profile');
     const nav = document.querySelector(".nav-links");
