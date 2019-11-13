@@ -30,7 +30,8 @@ CREATE TABLE Users(
     email VARCHAR,
     age INT,
     location VARCHAR,
-    bio VARCHAR
+    bio VARCHAR,
+    pic VARCHAR
 );
 
 -- post is connected to a user and has comments
@@ -96,12 +97,12 @@ CREATE TABLE usersessions(
 
 -- Add some users
 INSERT INTO Users(username, password, firstname, lastname, email, age, location, bio)
-    VALUES('DryEraser', '103', 'Adam', 'Addams', 'meow@aol.com', 40, 'New York', 'I’m very choosy. I’m also very suspicious, very irrational and I have a very short temper. I’m also extremely jealous and slow to forgive. Just so you know.'),
-          ('SteveJobs', '193', 'Beth', 'Brown', 'meow@chickenbutt.com', 51, 'New York', 'If you follow me, all of your dreams will come true. I also know the difference between your and you’re but I won’t lord it over you.'),
-          ('Expo', '777', 'Cal', 'Cassady', 'meow@pursuit.com', 14, 'New York', 'Living vicariously through myself'),
-          ('JohnDoe87', '456', 'Don', 'Donner', 'meow@gmail.com', 33, 'New York', 'One day I woke up & I felt bad because blink-182 broke up. Then i remembered all the small things and i went back to sleep and woke up the following morning.'),
-          ('JaneDoes20', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Pudding tastes better with a plastic spoon'),
-          ('LittleThanos', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'I used to act. I also belly dance and eat Jolly Ranchers – not always at the same time though.');
+    VALUES('DryEraser', '103', 'Adam', 'Addams', 'meow@aol.com', 40, 'New York', 'I’m very choosy. I’m also very suspicious, very irrational and I have a very short temper. I’m also extremely jealous and slow to forgive. Just so you know.', "http://cdn.osxdaily.com/wp-content/uploads/2014/07/users-and-groups-icon-mac.png"),
+          ('SteveJobs', '193', 'Beth', 'Brown', 'meow@chickenbutt.com', 51, 'New York', 'If you follow me, all of your dreams will come true. I also know the difference between your and you’re but I won’t lord it over you.', "http://cdn.osxdaily.com/wp-content/uploads/2014/07/users-and-groups-icon-mac.png"),
+          ('Expo', '777', 'Cal', 'Cassady', 'meow@pursuit.com', 14, 'New York', 'Living vicariously through myself', "http://cdn.osxdaily.com/wp-content/uploads/2014/07/users-and-groups-icon-mac.png"),
+          ('JohnDoe87', '456', 'Don', 'Donner', 'meow@gmail.com', 33, 'New York', 'One day I woke up & I felt bad because blink-182 broke up. Then i remembered all the small things and i went back to sleep and woke up the following morning.', "http://cdn.osxdaily.com/wp-content/uploads/2014/07/users-and-groups-icon-mac.png"),
+          ('JaneDoes20', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'Pudding tastes better with a plastic spoon', "http://cdn.osxdaily.com/wp-content/uploads/2014/07/users-and-groups-icon-mac.png"),
+          ('LittleThanos', '321', 'Eve', 'Edwards','meow@hotmail.com', 83, 'New York', 'I used to act. I also belly dance and eat Jolly Ranchers – not always at the same time though.', "http://cdn.osxdaily.com/wp-content/uploads/2014/07/users-and-groups-icon-mac.png");
 
 
 -- Add some posts
