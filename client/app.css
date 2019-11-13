@@ -1,5 +1,4 @@
 html, body{
-    /* margin: 0; */
     height: 100%;
     background: url("PHOTO-2019-11-11-22-58-05.jpg") no-repeat center center fixed;
     background-size: cover;
@@ -23,29 +22,16 @@ html, body{
     height: 50%
 }
 
-/* #right{
-    display: flex; 
-    justify-content: center;   
-} */
-
-/* #left{
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-} */
-
 #white_text{
    max-width: 440px;
    padding: 16px;
    color: white;
 }
 
-
 .heading{
     font-size: 20px;
     font-weight: bold;
 }
-
 
 a{
  color:#aab8c2;
@@ -53,13 +39,7 @@ a{
 }
 
 a:hover{
-    /* color: blueviolet; */
     text-decoration: underline;
-}
-
-.foot{
-    padding: 0 9px 0 9px;
-    font-size: 12px;
 }
 
 .small{
@@ -68,6 +48,7 @@ a:hover{
     background-color: white;
     margin-bottom: 8px;
 }
+
 #signup_big{
     background-color:black;
     border: 1px solid black;
@@ -87,13 +68,6 @@ a:hover{
 #signup_big:hover{
     background: blueviolet;
 
-}
-#signup_big:focus {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #71c9f8;
-    color: #1da1f2;
-    outline: 0;
-    background-color: #006dbf;
-    color:#ffffff;
 }
 
 #login_big{
@@ -123,7 +97,7 @@ a:hover{
     color:#ffffff;
 }
 
- #white_box{
+ /* #white_box{
     padding: 16px;
     color: black;
     display: flex;
@@ -132,7 +106,7 @@ a:hover{
     position: relative;
     top: 105px;
     height: 100%;
- }
+ } */
 
  
  #black_text{
@@ -185,7 +159,7 @@ a:hover{
     background-color: #006dbf;
     color:#ffffff;
   }
- input[type=text]{
+ /* input[type=text]{
     display: inline-block;
     width: 210px;
     padding: 12px 20px;
@@ -219,20 +193,20 @@ a:hover{
     background-color: rgb(232, 240, 254);
     outline: 0;
     border-color: rgba(0,132,180,0.5);
-  }
+  } */
 @media only screen and (max-height: 660px){
-    input[type=text], input[type=password], #forget, .login_small{
+    /* input[type=text], input[type=password], #forget, .login_small{
         visibility: hidden;
-    }
+    } */
     .login_small2{
         visibility: visible;
     }
 
 }
 @media only screen and (max-width: 1115px){
-    input[type=text], input[type=password], #forget, .login_small{
+    /* input[type=text], input[type=password], #forget, .login_small{
         visibility: hidden;
-    }
+    } */
     .login_small2{
         visibility: visible;
     }
@@ -271,7 +245,38 @@ a:hover{
      }
 }
 
-#right {
-    right: 0;
-    bottom: 0;
+h1 {
+ color:  rgb(226, 226, 226);
+ font-family: 'Anton', sans-serif;
+ letter-spacing: 5px;
+ margin: 10px;
+}
+
+.inputBox {
+    width: 85%;
+    height: 15px;
+    border-radius: 20px;
+}
+
+h2 {
+    color: grey;
+}
+
+#formDiv {
+    background-color: rgba(169, 169, 169, 0.56); 
+    width: 60%;
+    height: 80%;
+    display: flex;
+    align-content: center; 
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#formDiv input {
+    width: 60%;
+    height: 20px;
+}
+
+#formDiv h3 {
+    text-align: center;
 }
