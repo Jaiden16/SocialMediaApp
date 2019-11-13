@@ -4,6 +4,8 @@ CREATE DATABASE lurk_db;
 
 \c lurk_db
 
+DROP TABLE IF EXISTS sessions;
+
 DROP TABLE IF EXISTS pictures;
 
 DROP TABLE IF EXISTS lurks;
@@ -84,6 +86,12 @@ CREATE TABLE Pictures(
     likes INT,
     views INT
 );
+
+-- keeps track of who is logged in
+CREATE TABLE sessions(
+    user_id_logged_in INT REFERENCES Users (id) ON DELETE CASCADE,
+    user_password VARCHAR REFERENCES Users (password) ON DELETE CASCADE
+)
 
 -- Add some users
 INSERT INTO Users(username, password, firstname, lastname, email, age, location, bio)
@@ -180,3 +188,4 @@ SELECT * FROM Comments;
 SELECT * FROM Lurks;
 SELECT * FROM Albums;
 SELECT * FROM Pictures;
+SELECT * FROM sessions;
