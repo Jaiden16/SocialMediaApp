@@ -31,7 +31,7 @@ CREATE TABLE Users(
     age INT,
     location VARCHAR,
     bio VARCHAR,
-    pic VARCHAR
+    profile_pic VARCHAR
 );
 
 -- post is connected to a user and has comments
