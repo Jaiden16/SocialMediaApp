@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href = "app.css" rel = "stylesheet">
+    <link href="app.css" rel="stylesheet">
+    <script src="./app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
     <title>Lurk</title>
 </head>
+
 <body>
     <div id='container'>
         <div id='left'>
             <div id='white_text'>
-                <h2>You're one step away from Lurking</h2>
-                <!-- <p> We've added tons of cool features, including ...</p>
-                <div id='first'>
-                    <div class='paragraph'>
-                        <div class='heading'>Lurking</div>
-                        <div class='description'>Peep peoples Posts.</div>
-                    </div>
-                </div>
-                <div id='second'>
-                    <div class='paragraph'>
-                        <div class='heading'>Become a celeb or lurker</div>
-                        <div class='description'>Meet new people.</div>
-                    </div>
-                </div>
-                <div id='third'>
-                    <div class='paragraph'>
-                        <div class='heading'>Gain New Lurkers</div>
-                        <div class='description'>Choose from new themes and more dark mode options.</div>
-                    </div>
-                </div> -->
+                <h1>Lurk</h1>
+            </div>
+            <div id="formDiv">
+                    <form id="signup_form">
+                            <!-- <br><br> -->
+                            <h3>Create an account</h3>
+                            <label for="username">Pick a username:</label><br>
+                            <input type="text" name="username" id="username" placeholder="Username" required>
+                            <br><br>
+                            <label for="email">What's your email:</label><br>
+                            <input type="text" name="email" id="email" placeholder="Email" required>
+                            <br><br>
+                            <label for="firstname">What's your first name:</label><br>
+                            <input type="text" name="firstname" id="firstname" placeholder="Firstname" required>
+                            <br><br>
+                            <label for="lastname">What's your last name:</label><br>
+                            <input type="text" name="lastname" id="lastname" placeholder="Lastname" required>
+                            <br><br>
+                            <label for="age">How old are you:</label><br>
+                            <input type="number" name="age" id="age" placeholder="Age" required>
+                            <br><br>
+                            <label for="location">Where can people lurk you:</label><br>
+                            <input type="text" name="location" id="location" placeholder="Location" required>
+                            <br><br>
+                            <label for="bio">Tell me about yourself</label><br>
+                            <input type="text" name="bio" id="bio" placeholder="Bio" required>
+                            <br><br>
+                            <label for="password">Create a password:</label><br>
+                            <input type="password" name="password" id="password" placeholder="Password" required>
+                            <br><br>
+                            <!-- <label for="confirm_password">Confirm your password:</label>
+                            <input type="password" name="confirm_password" id="confirm_password" required> -->
+                            <button>Sign Up</button>
+                        </form>
             </div>
 
         </div>
@@ -39,30 +57,32 @@
         <div id='right'>
             <div id='info'>
                 <div id='white_box'>
+                    
 
 
                 </div>
             </div>
             <div id='top_right'>
-                    <div id='black_text'>
-                        <br> <br>
-                            <input placeholder='Username'>  </input> <br><br>
-                            <input placeholder='Password'>  </input>
+                <div id='black_text'>
+                    <br> <br>
+                    <input class="inputBox" type="text" placeholder='Username'> <br><br>
+                    <input class="inputBox" type="text" placeholder='Password'>
 
-                            <h2 id = 'join'> Join Lurk today.</h2>
-                            <button class='main' id='signup_big'>
-                                <a href="./pages/signup.html">
-                                    Sign Up
-                                </a> 
-                            </button>
-                            <br>
-                            <button class='main' id='login_big'>
-                                Log In
-                            </button>
-                        </div>
+                    <h2 id='join'> Join Lurk today </h2>
+                    <button class='main' id='signup_big'>
+                        <!-- <a href="./pages/signup.html"> -->
+                            Sign Up
+                        <!-- </a> -->
+                    </button>
+                    <br>
+                    <button class='main' id='login_big'>
+                        Log In
+                    </button>
+                </div>
             </div>
         </div>
-    
-    
+</div>
+
 </body>
+
 </html>
