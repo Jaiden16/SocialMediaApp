@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.log(user_id)
     let userProfile = await getUser(user_id)
     populateUser(userProfile)
-    // if (!user_id) window.location.href = './App.html'
 })
 
 
@@ -25,8 +24,10 @@ async function populateUser(user) {
     let li = document.createElement('li')
     let spanL = document.createElement('span')
     let spanR = document.createElement('span')
+    let editButton = document.createElement('button')
 
     profilePic.src = user.profile_pic
+    editButton.innerText = 'EDIT'
     userName.innerText = user.username
     userBio.innerText = user.bio
     moreInfoMaybe.innerText = 'More Info:'
@@ -42,40 +43,5 @@ async function populateUser(user) {
     moreInfoMaybe.append(space, space, span)
     span.append(ul)
     ul.append(li)
-
-
-    
-
-    
-    
-    // const allUsers = document.querySelector("#listAllLurked");
-    // const allUsersPosts = document.querySelector("#listAllLurkedPosts");
-    // allUsers.innerHTML = "";
-    // allUsersPosts.innerHTML = "";
-    // const response = await axios.get(`http://localhost:3000/lurks/${userID}`); //switch the user_id '2' with the logged in user
-    // response.data.payload.forEach(async (lurked) => {
-    //     let userProfile = document.createElement('div')
-    //     let profilePic = document.createElement('img')
-    //     let username = document.createElement('h2')
-    //     let userBio = document.createElement('p')
-    //     let unfollowBtn = document.createElement('button')
-        
-    //     userProfile.setAttribute('class', 'userProfile')
-    //     profilePic.setAttribute('class', 'profilePic')
-        
-    //     unfollowBtn.innerText = 'Unlurk'
-    //     unfollowBtn.addEventListener('click', unfollowUser)
-        
-    //     userProfile.append(profilePic, username, userBio, unfollowBtn)
-    //     userProfile.append(profilePic, username, userBio, unfollowBtn)
-    //     allUsers.append(userProfile)
-        
-    //     let lurkedPersonsPosts = await popPost(lurked.lurker_id)
-    //     populatePosts(lurkedPersonsPosts)
-    //     profilePic.src = "https://i0.wp.com/acaweb.org/wp-content/uploads/2018/12/profile-placeholder.png?fit=300%2C300&ssl=1"
-    //     username.innerText = lurked.lurker_username
-    //     userBio.innerText = lurkedPersonsPosts[0].bio
-    //     console.log(lurkedPersonsPosts)
-    // });
     
 }

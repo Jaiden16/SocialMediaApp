@@ -18,6 +18,17 @@ const navSlide = () => {
     const nav = document.querySelector(".nav-links");
     const navLinks = document.querySelectorAll('.nav-links li')
     const logOut = navLinks[navLinks.length - 1]
+    // const about = document.querySelector(".logo");
+    const li =  document.createElement('li')
+    const link =  document.createElement('a')
+    link.href = './AboutUs.html'
+    link.innerText ='About Us'
+    li.append(link)
+    nav.prepend(li)
+
+    // about.addEventListener('click', () => {
+    //     window.location.href = './AboutUs.html'
+    // })
 
     logOut.addEventListener('click', async (event) => {
         await axios.delete(`http://localhost:3000/session`);
