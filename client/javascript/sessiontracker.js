@@ -16,15 +16,17 @@ const getUser = async (userID) => {
 const navSlide = () => {
     const user_profile = document.querySelector('.user-profile');
     const nav = document.querySelector(".nav-links");
-    const navLinks = document.querySelectorAll('.nav-links li')
-    const logOut = navLinks[navLinks.length - 1]
     // const about = document.querySelector(".logo");
+    
     const li =  document.createElement('li')
     const link =  document.createElement('a')
     link.href = './AboutUs.html'
     link.innerText ='About Us'
     li.append(link)
     nav.prepend(li)
+
+    let navLinks = document.querySelectorAll('.nav-links li')
+    const logOut = navLinks[navLinks.length - 1]
 
     // about.addEventListener('click', () => {
     //     window.location.href = './AboutUs.html'
