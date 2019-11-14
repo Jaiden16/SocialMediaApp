@@ -204,3 +204,12 @@ nav {
   grid-template-columns: 100%;
   grid-gap: 20px;
 }
+
+span {
+  color: white;
+}
+
+#iconsDiv {
+  display: flex;
+  justify-content: space-between;
+}
