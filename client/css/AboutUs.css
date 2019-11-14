@@ -162,7 +162,7 @@ nav {
 .ps a img {
   width: 200px;
   filter: grayscale(100%);
-  transition: 0.4s all;
+  transition: 0.0s all;
 }
 
 .ps a:hover > img {
